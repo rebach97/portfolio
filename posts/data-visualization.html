@@ -29,16 +29,17 @@
     /* Slides */
     .story-item {
       display: none;
-      min-height: 70vh; /* Responsive to viewport */
-      display: flex;
       flex-direction: column;
       justify-content: flex-start;
       gap: 15px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
     }
 
     /* Active slide */
     .story-item.active {
       display: flex;
+      opacity: 1;
     }
 
     /* Link and text */
@@ -69,7 +70,7 @@
       border: none;
       border-radius: 6px;
       align-self: center;
-      flex-grow: 1; /* Chart stretches to use remaining vertical space */
+      flex-grow: 1;
     }
 
     /* Pagination Controls */
@@ -109,11 +110,11 @@
       .story-list {
         padding: 15px;
       }
-      .story-item {
-        min-height: 60vh;
-      }
       .story-item a {
         font-size: 1.05em;
+      }
+      .story-item iframe {
+        max-width: 100%;
       }
     }
   </style>
@@ -221,7 +222,10 @@
     const indicator = document.getElementById('progress-indicator');
 
     function showSlide(index) {
-      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        if (i === index) adjustSlideHeight(slide);
+      });
       indicator.textContent = `${index + 1} / ${slides.length}`;
     }
 
@@ -234,6 +238,19 @@
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(currentSlide);
     }
+
+    function adjustSlideHeight(slide) {
+      const minHeight = window.innerHeight * 0.7;
+      slide.style.minHeight = "auto";
+      const contentHeight = slide.scrollHeight;
+      slide.style.minHeight = Math.max(contentHeight, minHeight) + "px";
+    }
+
+    window.addEventListener('resize', () => {
+      if (slides[currentSlide].classList.contains('active')) {
+        adjustSlideHeight(slides[currentSlide]);
+      }
+    });
 
     showSlide(currentSlide);
   </script>
