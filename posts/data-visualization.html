@@ -9,24 +9,34 @@
     body {
       background: white;
       font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
     }
+
     h1 {
       text-align: center;
       font-family: 'Alexandria', sans-serif;
       margin-top: 30px;
     }
+
+    /* Container for all slides */
     .story-list {
       max-width: 800px;
       margin: 0 auto;
       padding: 40px 20px;
     }
+
+    /* Individual slides */
     .story-item {
-      display: none; /* Only one slide shows at a time */
-      text-align: center;
+      display: none;
+      text-align: left;
     }
+
     .story-item.active {
       display: block;
     }
+
+    /* Link styling */
     .story-item a {
       display: block;
       font-weight: 800;
@@ -34,19 +44,22 @@
       color: black;
       margin-bottom: 5px;
       text-decoration: none;
-      text-align: left;
     }
+
     .story-item a:hover {
       text-decoration: underline;
     }
+
+    /* Description */
     .story-desc {
       font-size: 1em;
       line-height: 1.6;
       color: #333;
       max-width: 650px;
-      margin: 0 auto 15px auto;
-      text-align: left;
+      margin: 0 0 15px 0;
     }
+
+    /* Chart / iframe */
     .story-item iframe {
       width: 100%;
       max-width: 600px;
@@ -56,11 +69,12 @@
       margin: 0 auto;
     }
 
-    /* Pagination Buttons */
+    /* Pagination controls */
     .pagination-controls {
       text-align: center;
       margin-top: 20px;
     }
+
     .pagination-controls button {
       background: #1b263b;
       color: white;
@@ -72,9 +86,32 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .pagination-controls button:hover {
       background: #ffcc00;
       color: black;
+    }
+
+    /* Progress indicator */
+    #progress-indicator {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.95em;
+      color: #555;
+      font-family: 'Alexandria', sans-serif;
+    }
+
+    /* Responsive adjustments */
+    @media(max-width: 768px) {
+      .story-list {
+        padding: 20px 15px;
+      }
+      .story-item a {
+        font-size: 1.05em;
+      }
+      .story-item iframe {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -168,18 +205,21 @@
     <button onclick="prevSlide()">← Previous</button>
     <button onclick="nextSlide()">Next →</button>
   </div>
+  <div id="progress-indicator">1 / 7</div>
 
   <p style="margin-top:40px; text-align:center;">
     <a href="../index.html">← Back to Portfolio</a>
   </p>
 
-  <!-- JavaScript for Slide Pagination -->
+  <!-- Slideshow JS -->
   <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.story-item');
+    const indicator = document.getElementById('progress-indicator');
 
     function showSlide(index) {
       slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      indicator.textContent = `${index + 1} / ${slides.length}`;
     }
 
     function nextSlide() {
@@ -191,6 +231,8 @@
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(currentSlide);
     }
+
+    showSlide(currentSlide);
   </script>
 
   <!-- Datawrapper auto-resize script -->
