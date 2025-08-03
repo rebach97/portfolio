@@ -6,39 +6,77 @@
   <title>Rebecca Griesbach | Journalist</title>
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; margin: 0; background: white; color: black; }
-    header { text-align: center; padding: 30px 20px; font-family: 'Alexandria', sans-serif; font-weight: 700; font-size: 1.5em; text-transform: uppercase; }
-    nav { text-align: center; padding: 10px 0; font-family: 'Alexandria', sans-serif; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Header & Nav */
+    header { 
+      text-align: center; padding: 30px 20px;
+      font-family: 'Alexandria', sans-serif; font-weight: 700; font-size: 1.5em; text-transform: uppercase;
+    }
+    nav { 
+      text-align: center; padding: 10px 0; 
+      font-family: 'Alexandria', sans-serif; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px;
+      position: sticky; top: 0; background: white;
+    }
     nav a { margin: 0 20px; color: black; text-decoration: none; }
     nav a:hover { text-decoration: underline; }
 
+    /* Full-screen sections */
+    section { 
+      min-height: 100vh; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      flex-direction: column; 
+      padding: 40px 20px; 
+      box-sizing: border-box;
+    }
+
     /* About */
-    #about { display: flex; align-items: center; gap: 30px; max-width: 1000px; margin: 60px auto; padding: 0 20px; }
-    #about img { width: 200px; height: 200px; object-fit: cover; border-radius: 8px; }
+    #about { flex-direction: row; gap: 40px; }
+    #about img { width: 220px; height: 220px; object-fit: cover; border-radius: 8px; }
+    #about-text { max-width: 500px; }
     #about-text h2 { font-family: 'Alexandria', sans-serif; font-size: 2em; margin-top: 0; }
     #about-text p { line-height: 1.6; }
 
     /* Clips */
-    #clips h2 { text-align: center; font-family: 'Alexandria', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 60px; }
-    .clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+    #clips h2 { text-align: center; font-family: 'Alexandria', sans-serif; font-weight: 700; text-transform: uppercase; margin-bottom: 40px; }
+    .clips { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+      gap: 30px; 
+      width: 100%; 
+      max-width: 1200px;
+      overflow-y: auto; 
+      padding-bottom: 20px;
+    }
     .clip { background: white; border-radius: 8px; overflow: hidden; }
     .clip a { display: block; color: inherit; text-decoration: none; }
     .clip img { width: 100%; display: block; }
     .clip-content { padding: 15px 20px; }
     .clip h3 { margin: 0 0 10px; font-size: 1.2em; font-family: 'Alexandria', sans-serif; font-weight: 600; }
-    .clip p { font-size: 0.95em; color: #333; font-family: 'Montserrat', sans-serif; }
+    .clip p { font-size: 0.95em; color: #333; }
 
-    /* Awards & Contact */
-    #awards h2, #contact h2 {
-      text-align: center; font-family: 'Alexandria', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 60px;
+    /* Awards */
+    #awards h2 { font-family: 'Alexandria', sans-serif; font-weight: 700; text-transform: uppercase; margin-bottom: 30px; }
+    ul { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; }
+    ul li { 
+      margin-bottom: 15px; 
+      padding: 15px 0; 
+      font-size: 1em; 
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
     }
-    ul { list-style-type: none; padding: 0; max-width: 600px; margin: 30px auto; }
-    ul li { background: white; border: 1px solid #ddd; margin-bottom: 15px; padding: 15px 20px; border-radius: 8px; font-size: 1em; font-family: 'Montserrat', sans-serif; }
-    #contact p { text-align: center; font-size: 1.1em; font-family: 'Montserrat', sans-serif; }
+
+    /* Contact */
+    #contact h2 { font-family: 'Alexandria', sans-serif; font-weight: 700; text-transform: uppercase; margin-bottom: 30px; }
+    #contact p { font-size: 1.1em; text-align: center; }
 
     /* Footer */
-    footer { text-align: center; padding: 30px; font-size: 0.9em; }
+    footer { text-align: center; padding: 20px; font-size: 0.9em; }
 
+    /* Responsive */
     @media(max-width:768px){
       #about { flex-direction: column; text-align:center; }
       #about img { width: 150px; height: 150px; }
