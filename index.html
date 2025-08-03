@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Montserrat', sans-serif; margin: 0; background: white; color: black; }
+    body { font-family: 'Montserrat', sans-serif; font-size: 0.95em; margin: 0; background: white; color: black; }
 
     /* Header & Nav */
     header { 
@@ -35,7 +35,7 @@
 
     /* About */
     #about { flex-direction: row; gap: 40px; }
-    #about img { width: 220px; height: 220px; object-fit: cover; border-radius: 8px; }
+    #about img { width: 260px; height: 260px; object-fit: cover; border-radius: 8px; }
     #about-text { max-width: 500px; }
     #about-text h2 { font-family: 'Alexandria', sans-serif; font-size: 2em; margin-top: 0; }
     #about-text p { line-height: 1.6; margin-bottom: 15px; }
@@ -56,25 +56,25 @@
     .clip a { display: block; color: inherit; text-decoration: none; }
     .clip img { width: 100%; display: block; }
     .clip-content { padding: 15px 20px; }
-    .clip h3 { margin: 0 0 10px; font-size: 1.2em; font-family: 'Alexandria', sans-serif; font-weight: 600; }
-    .clip p { font-size: 0.95em; color: #333; }
+    .clip h3 { margin: 0 0 10px; font-size: 1.15em; font-family: 'Alexandria', sans-serif; font-weight: 600; }
+    .clip p { font-size: 0.9em; color: #333; line-height: 1.5; }
 
     /* Awards */
     #awards h2 { font-family: 'Alexandria', sans-serif; font-weight: 700; text-transform: uppercase; margin-bottom: 30px; }
     ul { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; }
-    ul li { margin-bottom: 15px; padding: 15px 0; font-size: 1em; font-family: 'Montserrat', sans-serif; text-align: center; }
+    ul li { margin-bottom: 15px; padding: 15px 0; font-size: 0.95em; font-family: 'Montserrat', sans-serif; text-align: center; }
 
     /* Contact */
     #contact h2 { font-family: 'Alexandria', sans-serif; font-weight: 700; text-transform: uppercase; margin-bottom: 30px; }
-    #contact p { font-size: 1.1em; text-align: center; }
+    #contact p { font-size: 1em; text-align: center; }
 
     /* Footer */
-    footer { text-align: center; padding: 20px; font-size: 0.9em; }
+    footer { text-align: center; padding: 20px; font-size: 0.85em; }
 
     /* Responsive */
     @media(max-width:768px){
       #about { flex-direction: column; text-align:center; }
-      #about img { width: 150px; height: 150px; }
+      #about img { width: 180px; height: 180px; }
     }
   </style>
 </head>
@@ -100,12 +100,14 @@
   <section id="clips">
     <h2>Selected Clips</h2>
     <div class="clips">
+
+      <!-- Original 4 Clips -->
       <div class="clip">
-        <a href="https://www.al.com/educationlab/2024/11/immigration-brings-complex-changes-to-alabama-towns-schools-data-shows.html" target="_blank">
-          <img src="https://www.al.com/resizer/v2/SKNUA55GKVEOBGOFPHQQRRCCHE.jpeg?auth=e602a12e3e07138d7da7aa31d4110d0c67005d79ac41e5c424b63f3240c72a84&width=1280&quality=90" alt="Immigration story thumbnail">
+        <a href="https://www.al.com/educationlab/2024/11/one-alabama-school-system-responds-to-rise-in-immigration-what-they-deserve.html" target="_blank">
+          <img src="https://www.al.com/resizer/v2/7WDTRXXWI5FE7ANKPOXFY2DKEM.jpeg?auth=a170c6fd916ba6744036ab1653eef242c7ffe4c0e411d4e0f7978a9710aff1e3&width=1280&quality=90" alt="Immigration story thumbnail">
           <div class="clip-content">
-            <h3>Immigration Brings Complex Changes to Alabama Schools</h3>
-            <p>Data-driven package examining the rise of immigrant populations in Alabama schools, presented at EWA and NAHJ seminars.</p>
+            <h3>One Alabama School System Responds to Rise in Immigration</h3>
+            <p>Data-driven package examining the rise of immigrant populations in Alabama schools, presented at EWA and NAHJ seminars. To report this package, I used R/RStudio and tidycensus to combine nearly 30 years of state and federal enrollment data as well as immigration statistics from the American Community Survey.</p>
           </div>
         </a>
       </div>
@@ -139,6 +141,68 @@
           </div>
         </a>
       </div>
+
+      <!-- 6 New Clips from Portfolio -->
+      <div class="clip">
+        <a href="https://hechingerreport.org/battling-pandemic-reading-woes-through-teacher-support-training/" target="_blank">
+          <img src="https://i0.wp.com/hechingerreport.org/wp-content/uploads/2021/11/ALEdLab3-scaled.jpg?resize=1568%2C1045&ssl=1" alt="Reading intervention thumbnail">
+          <div class="clip-content">
+            <h3>Paraprofessionals are Key to a Reading Intervention Plan in Alabama</h3>
+            <p>This story on a rural Alabama district’s reading gains was part of national Ed Lab Collaboration that was a finalist for a national headliner award. I spoke on EWA radio about this story with Jill Barshay from The Hechinger Report. A state board member called the story a “roadmap” for other Alabama schools to follow.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="clip">
+        <a href="https://www.al.com/educationlab/2023/04/many-alabama-community-college-students-never-earn-a-degree-advisers-work-to-reverse-the-trend.html" target="_blank">
+          <img src="https://www.al.com/resizer/v2/BRMEJHABFNBAXOZQHT5TTSJ6WQ.jpg?auth=2fd8abaf5d0f35cbe2f3a8a35bbfb79cf5a4fb9b7a2dccb22e7a21d8d1dc2e26&width=1280&quality=90" alt="Community colleges thumbnail">
+          <div class="clip-content">
+            <h3>Two Alabama Community Colleges Take a New Approach to Advising</h3>
+            <p>My coverage of efforts to raise community college completion rates was part of a national Ed Lab Collaboration. It was cited by a leading college access organization to advocate for equitable funding of HBCCs, and it was praised by The Grade for its data-focused look at a local solution.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="clip">
+        <a href="https://www.al.com/educationlab/2022/10/tackling-teacher-shortages-influx-of-english-learners-prompts-change-in-alabama-school-district.html" target="_blank">
+          <img src="https://www.al.com/resizer/v2/QR44NRVXIFEVNHOTZBXFMFBKYQ.jpg?auth=01b5235bd8bed20bf4dfffa91524ac53cd5986f63023a010d684bb09679e1512&width=1280&quality=90" alt="Teacher shortage thumbnail">
+          <div class="clip-content">
+            <h3>Tackling Teacher Shortages: One Alabama Town’s Creative Approach</h3>
+            <p>Solutions package with Ed Lab Collab was a finalist for EWA collaborations, and a judge specifically pointed out the Alabama story. Was called “very powerful” by the superintendent.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="clip">
+        <a href="https://www.al.com/educationlab/2022/05/the-best-gift-alabama-school-celebrates-final-graduation-before-court-ordered-closure.html" target="_blank">
+          <img src="https://www.al.com/resizer/v2/7ACEJGFDVZD3BIQF2ECVL6R55I.jpg?auth=451c2d0fb58a903b77534adc19f09ff3249b88d98eb76d38945134e59a7d4645&width=1280&quality=90" alt="Final graduation thumbnail">
+          <div class="clip-content">
+            <h3>The ‘Best Gift’: Alabama School Celebrates Final Graduation</h3>
+            <p>This story, co-reported with Trisha Powell Crain, follows one small school’s final graduation and makes the case that Black schools continue to bear the brunt of present-day desegregation efforts.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="clip">
+        <a href="https://www.al.com/educationlab/2023/04/alabama-cuts-more-pre-k-equity-resources-after-removing-naeyc-manual-firing-barbara-cooper.html" target="_blank">
+          <img src="https://www.al.com/resizer/v2/5A3LRQY3GNBC7HQ5E3XFORJ66U.jpg?auth=621f4285c5effe680c632eeda08eb3cdb8d87d20a48b4f27d6a5a78e5f2414c3&width=1280&quality=90" alt="Pre-K cuts thumbnail">
+          <div class="clip-content">
+            <h3>Alabama Cuts More Pre-K Equity Resources</h3>
+            <p>This quick-turn accountability story relied on an analysis of state reading materials and training documentation to uncover the fallout of the controversial ousting of a Black state pre-K leader.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="clip">
+        <a href="https://www.al.com/educationlab/2024/08/how-alabamas-anti-dei-law-kicks-in-college-offices-closed-websites-scrubbed.html" target="_blank">
+          <img src="https://www.al.com/resizer/v2/5JLFBB55ANBZZGQ2LWDZXUBI54.jpg?auth=7cdbe20fc0b3dfa469a0c94b18d143bd99bb7ac00100a00bf01051353337f9f0&width=1280&quality=90" alt="Anti-DEI law thumbnail">
+          <div class="clip-content">
+            <h3>Alabama’s Anti-DEI Law Kicks In: College Offices Close, Websites Scrubbed</h3>
+            <p>This was the first, and most comprehensive, look at the impact of Alabama’s anti-DEI law on college campuses in the state. Two students featured in this story were contacted by the NAACP to serve as plaintiffs in a court case against the State of Alabama and The University of Alabama.</p>
+          </div>
+        </a>
+      </div>
+
     </div>
   </section>
 
