@@ -11,8 +11,6 @@
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      scroll-snap-type: y mandatory; /* Enables full-page snapping */
-      overflow-y: scroll;
     }
 
     h1 {
@@ -25,21 +23,17 @@
     .story-list {
       max-width: 900px;
       margin: 0 auto;
+      padding: 20px;
     }
 
     /* Slides */
     .story-item {
       display: none;
       flex-direction: column;
-      justify-content: center;   /* Center content vertically */
-      align-items: center;       /* Center charts horizontally */
-      gap: 20px;
+      justify-content: flex-start;
+      gap: 12px;
       opacity: 0;
       transition: opacity 0.5s ease;
-      height: 100vh;             /* Full viewport height */
-      box-sizing: border-box;
-      padding: 40px 20px;
-      scroll-snap-align: start;
     }
 
     .story-item.active {
@@ -49,13 +43,10 @@
 
     /* Link and text */
     .story-item a {
-      align-self: flex-start;    /* Keep text left-aligned */
-      width: 100%;
-      max-width: 650px;
       font-weight: 800;
-      font-size: 1.2em;
+      font-size: 1.1em; /* slightly smaller */
       color: black;
-      margin-bottom: 5px;
+      margin-bottom: 3px;
       text-decoration: none;
     }
 
@@ -64,38 +55,34 @@
     }
 
     .story-desc {
-      align-self: flex-start;
-      width: 100%;
-      max-width: 650px;
-      font-size: 1em;
-      line-height: 1.6;
+      font-size: 0.9em;    /* smaller text */
+      line-height: 1.4;    /* tighter spacing */
       color: #333;
-      margin-bottom: 10px;
+      max-width: 100%;
+      margin-bottom: 8px;
     }
 
     /* Chart / iframe */
     .story-item iframe {
       width: 100%;
-      max-width: 700px;
+      max-width: 650px;
       border-radius: 6px;
-      flex-grow: 0;
+      align-self: center;
     }
 
     /* Pagination Controls */
     .pagination-controls {
       text-align: center;
-      margin: 20px 0;
-      position: sticky;
-      bottom: 20px;
+      margin-top: 20px;
     }
 
     .pagination-controls button {
       background: #1b263b;
       color: white;
       border: none;
-      padding: 10px 18px;
-      margin: 5px;
-      font-size: 1em;
+      padding: 8px 16px;
+      margin: 4px;
+      font-size: 0.95em;
       border-radius: 5px;
       cursor: pointer;
       transition: background 0.3s;
@@ -109,19 +96,22 @@
     /* Progress Indicator */
     #progress-indicator {
       text-align: center;
-      font-size: 0.95em;
+      margin-top: 8px;
+      font-size: 0.9em;
       color: #555;
       font-family: 'Alexandria', sans-serif;
     }
 
     /* Responsive adjustments */
     @media(max-width: 768px) {
-      .story-item {
-        height: auto; /* Allow scrolling if slide taller than viewport */
-        min-height: 100vh;
+      .story-list {
+        padding: 12px;
       }
       .story-item a {
-        font-size: 1.05em;
+        font-size: 1em;
+      }
+      .story-desc {
+        font-size: 0.85em;
       }
       .story-item iframe {
         max-width: 100%;
@@ -154,7 +144,7 @@
       <div class="story-desc">
         Analysis of rising higher education costs in Alabama using public tuition and financial aid data.
       </div>
-      <iframe src="https://public.flourish.studio/story/1848749/embed" height="500" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/story/1848749/embed" height="460" scrolling="no"></iframe>
     </div>
 
     <!-- Slide 3 -->
@@ -165,7 +155,7 @@
       <div class="story-desc">
         Interactive breakdown of superintendent salaries by district across Alabama.
       </div>
-      <iframe src="https://public.flourish.studio/visualisation/12361036/embed" height="400" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/visualisation/12361036/embed" height="380" scrolling="no"></iframe>
     </div>
 
     <!-- Slide 4 -->
@@ -187,7 +177,7 @@
       <div class="story-desc">
         Analysis of school choice funding and who benefits from new state grants and reimbursements.
       </div>
-      <iframe src="https://public.flourish.studio/visualisation/23803072/embed" height="400" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/visualisation/23803072/embed" height="380" scrolling="no"></iframe>
     </div>
 
     <!-- Slide 6 -->
@@ -209,19 +199,19 @@
       <div class="story-desc">
         Interactive analysis of the latest national school rankings and what they reveal about Alabama's progress and remaining gaps.
       </div>
-      <iframe src="https://public.flourish.studio/visualisation/21361995/embed" height="400" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/visualisation/21361995/embed" height="380" scrolling="no"></iframe>
     </div>
 
   </div>
 
-  <!-- Pagination Buttons -->
+  <!-- Pagination Controls -->
   <div class="pagination-controls">
     <button onclick="prevSlide()">← Previous</button>
     <button onclick="nextSlide()">Next →</button>
   </div>
   <div id="progress-indicator">1 / 7</div>
 
-  <p style="margin-top:40px; text-align:center;">
+  <p style="margin-top:30px; text-align:center;">
     <a href="../index.html">← Back to Portfolio</a>
   </p>
 
@@ -234,6 +224,7 @@
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
+        if (i === index) adjustSlideHeight(slide);
       });
       indicator.textContent = `${index + 1} / ${slides.length}`;
     }
@@ -247,6 +238,18 @@
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(currentSlide);
     }
+
+    function adjustSlideHeight(slide) {
+      const viewportHeight = window.innerHeight;
+      const baseHeight = viewportHeight * 0.7;
+      slide.style.minHeight = "auto";
+      const contentHeight = slide.scrollHeight;
+      slide.style.minHeight = Math.max(contentHeight, baseHeight) + "px";
+    }
+
+    window.addEventListener('resize', () => {
+      adjustSlideHeight(slides[currentSlide]);
+    });
 
     showSlide(currentSlide);
   </script>
