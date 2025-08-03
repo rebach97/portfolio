@@ -1,39 +1,217 @@
+/* ===== Global Styles ===== */
 body {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.95em;
+  background-color: white;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Header & Banner ===== */
+header {
+  text-align: center;
   background: white;
   color: black;
+  padding: 60px 20px 80px;
+  position: relative;
 }
-h1, h2, h3, header, nav, footer {
-  font-family: 'Alexandria', sans-serif !important;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-header {
+
+header img {
   width: 100%;
-  color: white;
-  font-size: 1.6em;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 300px;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.85)),
-    url('https://cdn.bsky.app/img/banner/plain/did:plc:vcchby7oxg7y5k5ozlgrr7ra/bafkreifc25eguvkqxwu64b3ekajdham7vntlwqbvfoj42gxj33bfxvzzuy@jpeg')
-    center/cover no-repeat;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
-nav { text-align: center; position: sticky; top: 1; background: white; z-index: 1000; }
-nav a, nav a:visited { margin: 0 20px; color: black; text-decoration: none; }
-nav a:hover { text-decoration: underline; }
-section { min-height: 100vh; padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 1200px; }
-.clip { border-radius: 8px; overflow: hidden; background: white; box-shadow: none; }
-.clip img { width: 100%; display: block; }
-.clip-content { padding: 10px; }
-.clip a, .clip a:visited { color: black; text-decoration: none; display: block; }
-.clip a:hover { text-decoration: underline; }
-.awards-list { text-align:center; }
-.awards-list p { margin: 5px 0; }
-.links a, .links a:visited { color:black; text-decoration:none; }
-.links a:hover { text-decoration:underline; }
+
+header h1 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+header p {
+  font-size: 1em;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Soft gradient at bottom of banner */
+header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
+}
+
+/* ===== Navigation ===== */
+nav {
+  background: white;
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+}
+
+nav a {
+  color: black;
+  margin: 0 18px;
+  font-weight: 600;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+nav a:hover {
+  color: #0077cc;
+}
+
+/* ===== Section Styling ===== */
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+}
+
+section:nth-of-type(even) {
+  background: #f9f9f9; /* subtle alternating background */
+}
+
+section h2 {
+  text-align: center;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #ddd;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+section + section {
+  margin-top: 60px;
+}
+
+/* ===== About Section ===== */
+#about p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: left;
+}
+
+/* ===== Clips Grid Styling ===== */
+.clips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.clip {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clip:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.clip h3 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 1.1em;
+  margin: 0 0 8px 0;
+  color: black;
+}
+
+.clip p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* ===== Awards & Recognition ===== */
+#awards {
+  text-align: center;
+}
+
+#awards p, 
+#awards li {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #333;
+  max-width: 700px;
+  margin: 5px auto;
+  text-align: center;
+}
+
+/* Remove bullet points */
+#awards ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* ===== Contact Section ===== */
+#contact p {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  color: #555;
+  margin-top: 60px;
+  font-size: 0.9em;
+  border-top: 1px solid #eee;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media(max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+  section {
+    padding: 60px 15px;
+  }
+  section h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+  .clips {
+    gap: 20px;
+  }
+  .clip {
+    padding: 15px;
+  }
+  #about p {
+    font-size: 0.9em;
+  }
+}
