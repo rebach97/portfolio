@@ -8,7 +8,7 @@
   <link href="../style.css?v=12" rel="stylesheet">
   <style>
     body {
-      background: #f5f5f5; /* soft gray background */
+      background: white;
     }
     .story-list {
       max-width: 800px;
@@ -17,22 +17,15 @@
     }
     .story-item {
       margin-bottom: 80px;
-      padding: 40px 20px;
-      text-align: center;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* subtle card shadow */
-    }
-    .story-item:last-child {
-      margin-bottom: 0;
     }
     .story-item a {
       display: block;
-      font-weight: 700;
-      font-size: 1.25em;
+      font-weight: 800; /* slightly bolder */
+      font-size: 1.2em;
       color: black;
       margin-bottom: 5px;
       text-decoration: none;
+      text-align: left;
     }
     .story-item a:hover {
       text-decoration: underline;
@@ -42,13 +35,16 @@
       line-height: 1.6;
       color: #333;
       max-width: 650px;
-      margin: 0 auto 15px auto;
+      margin: 0 0 15px 0; /* left aligned */
+      text-align: left;
     }
     .story-item iframe {
       width: 100%;
-      max-width: 700px;
+      max-width: 600px; /* smaller charts */
       border: none;
       border-radius: 6px;
+      display: block;
+      margin: 0 auto; /* center the charts under left-aligned text */
     }
   </style>
 </head>
@@ -76,7 +72,7 @@
       <div class="story-desc">
         Analysis of rising higher education costs in Alabama using public tuition and financial aid data.
       </div>
-      <iframe src="https://public.flourish.studio/story/1848749/embed" height="650" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/story/1848749/embed" height="500" scrolling="no"></iframe>
     </div>
 
     <div class="story-item">
@@ -86,7 +82,7 @@
       <div class="story-desc">
         Interactive breakdown of superintendent salaries by district across Alabama.
       </div>
-      <iframe src="https://public.flourish.studio/visualisation/12361036/embed" height="500" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/visualisation/12361036/embed" height="400" scrolling="no"></iframe>
     </div>
 
     <div class="story-item">
@@ -106,7 +102,7 @@
       <div class="story-desc">
         Analysis of school choice funding and who benefits from new state grants and reimbursements.
       </div>
-      <iframe src="https://public.flourish.studio/visualisation/23803072/embed" height="500" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/visualisation/23803072/embed" height="400" scrolling="no"></iframe>
     </div>
 
     <div class="story-item">
@@ -126,7 +122,7 @@
       <div class="story-desc">
         Interactive analysis of the latest national school rankings and what they reveal about Alabama's progress and remaining gaps.
       </div>
-      <iframe src="https://public.flourish.studio/visualisation/21361995/embed" height="500" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/visualisation/21361995/embed" height="400" scrolling="no"></iframe>
     </div>
 
   </div>
