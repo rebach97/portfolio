@@ -37,24 +37,43 @@
   <section id="clips">
     <h2>Selected Clips</h2>
     <div class="clips">
+
       <div class="clip">
-        <h3><a href="https://www.al.com/educationlab/2024/11/one-alabama-school-system-responds-to-rise-in-immigration-what-they-deserve.html" target="_blank">
-          Immigration Brings Complex Changes to Alabama Schools
-        </a></h3>
+        <div class="clip-thumb">
+          <img src="https://www.al.com/resizer/v2/7WDTRXXWI5FE7ANKPOXFY2DKEM.jpeg?auth=a170c6fd916ba6744036ab1653eef242c7ffe4c0e411d4e0f7978a9710aff1e3&width=1280&quality=90" alt="Immigration story">
+        </div>
+        <h3>
+          <a href="https://www.al.com/educationlab/2024/11/one-alabama-school-system-responds-to-rise-in-immigration-what-they-deserve.html" target="_blank">
+            Immigration Brings Complex Changes to Alabama Schools
+          </a>
+        </h3>
         <p>To report this package, I used R/RStudio and tidycensus to combine nearly 30 years of state and federal enrollment data as well as immigration statistics from the American Community Survey.</p>
       </div>
+
       <div class="clip">
-        <h3><a href="https://hechingerreport.org/battling-pandemic-reading-woes-through-teacher-support-training/" target="_blank">
-          Battling Pandemic Reading Woes
-        </a></h3>
+        <div class="clip-thumb">
+          <img src="https://i0.wp.com/hechingerreport.org/wp-content/uploads/2022/03/AL-Books-1-scaled.jpeg?w=2340&ssl=1" alt="Reading Woes story">
+        </div>
+        <h3>
+          <a href="https://hechingerreport.org/battling-pandemic-reading-woes-through-teacher-support-training/" target="_blank">
+            Battling Pandemic Reading Woes
+          </a>
+        </h3>
         <p>Part of the Ed Lab collaboration, this story highlighted Alabama's early literacy efforts and was discussed on EWA radio.</p>
       </div>
+
       <div class="clip">
-        <h3><a href="https://www.al.com/educationlab/2023/07/alabama-mom-alleges-retaliation-after-ban-from-local-schools-feds-investigating.html" target="_blank">
-          Alabama Mom Alleges School Retaliation
-        </a></h3>
+        <div class="clip-thumb">
+          <img src="https://www.al.com/resizer/v2/JWTYPIWCGFFP5ASU5SIQUAIWTU.jpg?auth=1d3f032b16bca77db4d97cc8a3139a433e248be56a4147a67671760e301a56b9&width=1280&quality=90" alt="Retaliation story">
+        </div>
+        <h3>
+          <a href="https://www.al.com/educationlab/2023/07/alabama-mom-alleges-retaliation-after-ban-from-local-schools-feds-investigating.html" target="_blank">
+            Alabama Mom Alleges School Retaliation
+          </a>
+        </h3>
         <p>Exclusive investigation uncovering patterns of parental retaliation, leading to a federal class-action lawsuit against the U.S. Department of Education.</p>
       </div>
+
     </div>
   </section>
 
@@ -86,9 +105,6 @@
 
   <!-- ===== JS: Active Nav Highlight ===== -->
   <script>
-    // Smooth scroll is handled by CSS (scroll-behavior: smooth)
-
-    // Highlight active nav link on scroll
     window.addEventListener("scroll", () => {
       const sections = document.querySelectorAll("section");
       const navLinks = document.querySelectorAll("nav a");
@@ -96,7 +112,7 @@
       let current = "";
 
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120; // adjust for sticky nav
+        const sectionTop = section.offsetTop - 120;
         const sectionHeight = section.clientHeight;
         if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
           current = section.getAttribute("id");
