@@ -1,231 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rebecca Griesbach | Journalist Portfolio</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        /* Global Styles */
-        * { box-sizing: border-box; }
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f8f9fa; 
-            color: #333; 
-        }
-        a { color: #0077cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebecca Griesbach | Journalist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; margin: 0; background: white; color: black; }
+    header { text-align: center; padding: 30px 20px; font-family: 'Alexandria', sans-serif; font-weight: 700; font-size: 1.5em; text-transform: uppercase; }
+    nav { text-align: center; padding: 10px 0; font-family: 'Alexandria', sans-serif; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+    nav a { margin: 0 20px; color: black; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
 
-        /* Header */
-        header { 
-            background: #000; 
-            color: white; 
-            text-align: center; 
-            padding: 60px 20px 40px; 
-        }
-        header h1 { 
-            margin: 0; 
-            font-size: 2.8em; 
-            font-family: 'Alexandria', sans-serif; 
-            font-weight: 700;
-        }
-        header p { 
-            font-size: 1.2em; 
-            margin-top: 15px; 
-            max-width: 600px; 
-            margin-left: auto; 
-            margin-right: auto; 
-        }
+    /* About */
+    #about { display: flex; align-items: center; gap: 30px; max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+    #about img { width: 200px; height: 200px; object-fit: cover; border-radius: 8px; }
+    #about-text h2 { font-family: 'Alexandria', sans-serif; font-size: 2em; margin-top: 0; }
+    #about-text p { line-height: 1.6; }
 
-        /* Navigation */
-        nav { 
-            background: #000; 
-            padding: 15px; 
-            text-align: center; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-        }
-        nav a { 
-            color: white; 
-            margin: 0 20px; 
-            font-weight: 600; 
-            font-size: 0.9em; 
-            font-family: 'Alexandria', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        nav a:hover { color: #ffcc00; }
+    /* Clips */
+    #clips h2 { text-align: center; font-family: 'Alexandria', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 60px; }
+    .clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+    .clip { background: white; border-radius: 8px; overflow: hidden; }
+    .clip a { display: block; color: inherit; text-decoration: none; }
+    .clip img { width: 100%; display: block; }
+    .clip-content { padding: 15px 20px; }
+    .clip h3 { margin: 0 0 10px; font-size: 1.2em; font-family: 'Alexandria', sans-serif; font-weight: 600; }
+    .clip p { font-size: 0.95em; color: #333; font-family: 'Montserrat', sans-serif; }
 
-        /* Headshot */
-        .headshot-container { 
-            text-align: center; 
-            margin-top: 20px; 
-            margin-bottom: 40px; /* consistent gap before About */
-        }
-        .headshot-container img { 
-            width: 160px; 
-            height: 160px; 
-            border-radius: 50%; 
-            border: 4px solid white; 
-        }
+    /* Awards & Contact */
+    #awards h2, #contact h2 {
+      text-align: center; font-family: 'Alexandria', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 60px;
+    }
+    ul { list-style-type: none; padding: 0; max-width: 600px; margin: 30px auto; }
+    ul li { background: white; border: 1px solid #ddd; margin-bottom: 15px; padding: 15px 20px; border-radius: 8px; font-size: 1em; font-family: 'Montserrat', sans-serif; }
+    #contact p { text-align: center; font-size: 1.1em; font-family: 'Montserrat', sans-serif; }
 
-        /* Sections */
-        section { 
-            max-width: 1200px; 
-            margin: auto; 
-            padding: 60px 20px; 
-        }
-        h2 { 
-            color: #222; 
-            margin-bottom: 25px; 
-            font-size: 2em; 
-            text-align: center; 
-            font-family: 'Alexandria', sans-serif; 
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        p { 
-            line-height: 1.6; 
-            font-weight: 300; 
-            font-family: 'Montserrat', sans-serif;
-        }
+    /* Footer */
+    footer { text-align: center; padding: 30px; font-size: 0.9em; }
 
-        /* Clips Grid */
-        .clips { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-            gap: 30px; 
-        }
-        .clip { 
-            background: white; 
-            padding: 20px; 
-            border-radius: 12px; 
-        }
-        .clip h3 { 
-            margin-top: 0; 
-            font-size: 1.2em; 
-            font-family: 'Alexandria', sans-serif; 
-            font-weight: 600;
-        }
-        .clip p { 
-            font-size: 0.95em; 
-            color: #555; 
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Awards */
-        ul { 
-            list-style-type: none; 
-            padding: 0; 
-            max-width: 600px; 
-            margin: auto; 
-        }
-        ul li { 
-            background: white; 
-            margin-bottom: 15px; 
-            padding: 15px 20px; 
-            border-radius: 8px; 
-            font-size: 1em; 
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Contact */
-        #contact p { 
-            text-align: center; 
-            font-size: 1.1em; 
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Footer */
-        footer { 
-            text-align: center; 
-            padding: 30px; 
-            background: #000; 
-            color: white; 
-            margin-top: 60px; 
-            font-size: 0.9em; 
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Responsive */
-        @media(max-width: 768px) {
-            header h1 { font-size: 2.2em; }
-            header p { font-size: 1em; }
-            nav a { margin: 0 10px; font-size: 0.8em; }
-            .headshot-container img { width: 120px; height: 120px; }
-            .headshot-container { margin-top: 15px; margin-bottom: 30px; }
-            section { padding: 40px 15px; }
-        }
-    </style>
+    @media(max-width:768px){
+      #about { flex-direction: column; text-align:center; }
+      #about img { width: 150px; height: 150px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>REBECCA GRIESBACH</h1>
-        <p> Data & Education Reporter | AL.com & The New York Times</p>
-    </header>
+  <header>REBECCA GRIESBACH | journalist</header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#clips">Clips</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#clips">Clips</a>
-        <a href="#awards">Awards</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="headshot-container">
-        <img src="image001.jpeg" alt="Rebecca Griesbach Headshot">
+  <section id="about">
+    <img src="image001.jpeg" alt="Rebecca Griesbach Headshot">
+    <div id="about-text">
+      <h2>About Me</h2>
+      <p>I am an Alabama-based journalist with five years of experience in statewide and national newsrooms, specializing in investigative reporting, public records, and data-driven storytelling. My reporting focuses on education equity, policy, and systemic challenges impacting schools and communities across the South.</p>
+      <p style="margin-top:20px;"><a href="Rebecca_Griesbach_Resume.pdf" target="_blank">Download My Resume (PDF)</a></p>
     </div>
+  </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am an Alabama-based journalist with five years of experience in statewide and national newsrooms, where I have specialized in enterprise, public records and data-driven storytelling. My work has focused on education equity, policy, criminal justice, and other systemic challenges impacting communities across the South.</p>
-        <p style="text-align:center; margin-top:20px;"><a href="Rebecca_Griesbach_Resume.pdf" target="_blank">Download My Resume (PDF)</a></p>
-    </section>
+  <section id="clips">
+    <h2>Selected Clips</h2>
+    <div class="clips">
+      <div class="clip">
+        <a href="https://www.al.com/educationlab/2024/11/immigration-brings-complex-changes-to-alabama-towns-schools-data-shows.html" target="_blank">
+          <img src="immigration.jpg" alt="Immigration story thumbnail">
+          <div class="clip-content">
+            <h3>Immigration Brings Complex Changes to Alabama Schools</h3>
+            <p>Data-driven package examining the rise of immigrant populations in Alabama schools, presented at EWA and NAHJ seminars.</p>
+          </div>
+        </a>
+      </div>
+      <div class="clip">
+        <a href="https://hechingerreport.org/crt-debate-repeats-past-battles-about-state-history-textbooks/" target="_blank">
+          <img src="crt.jpg" alt="CRT debate thumbnail">
+          <div class="clip-content">
+            <h3>CRT Debate Repeats Past Battles About State History Textbooks</h3>
+            <p>Investigative feature tracing a century of Alabama textbook controversies and how they shape today’s classroom debates.</p>
+          </div>
+        </a>
+      </div>
+      <div class="clip">
+        <a href="https://www.al.com/educationlab/2023/07/alabama-mom-alleges-retaliation-after-ban-from-local-schools-feds-investigating.html" target="_blank">
+          <img src="retaliation.jpg" alt="School retaliation thumbnail">
+          <div class="clip-content">
+            <h3>Alabama Mom Alleges School Retaliation</h3>
+            <p>Exclusive investigation uncovering patterns of parental retaliation, leading to a federal class-action lawsuit against the U.S. Department of Education.</p>
+          </div>
+        </a>
+      </div>
+      <div class="clip">
+        <a href="https://www.al.com/educationlab/2024/05/brown-v-board-integrated-classes-but-left-black-schoolhouses-behind-saving-alabamas-rosenwald-schools.html" target="_blank">
+          <img src="brown-v-board.jpg" alt="Brown v Board thumbnail">
+          <div class="clip-content">
+            <h3>Brown v. Board: What Was Left Behind</h3>
+            <p>Historical series reflecting on desegregation’s legacy and efforts to preserve Alabama’s Rosenwald schools.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <section id="clips">
-        <h2>Selected Clips</h2>
-        <div class="clips">
-            <div class="clip">
-                <h3><a href="https://www.al.com/educationlab/2024/11/immigration-brings-complex-changes-to-alabama-towns-schools-data-shows.html" target="_blank">Immigration Brings Complex Changes to Alabama Schools</a></h3>
-                <p>Data-driven package examining the rise of immigrant populations in Alabama schools, presented at EWA and NAHJ seminars. </p>
-            </div>
-            <div class="clip">
-                <h3><a href="https://hechingerreport.org/crt-debate-repeats-past-battles-about-state-history-textbooks/" target="_blank">CRT Debate Repeats Past Battles About State History Textbooks</a></h3>
-                <p>Investigative feature tracing a century of Alabama textbook controversies and how they shape today’s classroom debates.</p>
-            </div>
-            <div class="clip">
-                <h3><a href="https://www.al.com/educationlab/2023/07/alabama-mom-alleges-retaliation-after-ban-from-local-schools-feds-investigating.html" target="_blank">Alabama Mom Alleges Retaliation After Ban From Local Schools</a></h3>
-                <p>Investigation uncovering patterns of parental retaliation, leading to a federal class-action lawsuit against the U.S. Department of Education.</p>
-            </div>
-            <div class="clip">
-                <h3><a href="https://www.al.com/educationlab/2024/05/brown-v-board-integrated-classes-but-left-black-schoolhouses-behind-saving-alabamas-rosenwald-schools.html" target="_blank">Brown v. Board: Saving Alabama's Rosenwald Schools</a></h3>
-                <p>Historical series reflecting on desegregation’s legacy and efforts to preserve Alabama’s Rosenwald schools.</p>
-            </div>
-        </div>
-    </section>
+  <section id="awards">
+    <h2>Awards & Recognition</h2>
+    <ul>
+      <li>2021 Pulitzer Prize for Public Service, The New York Times</li>
+      <li>2024-2025 Alabama Press Association Awards for Best Local Education Reporting</li>
+      <li>2022 National Headliner Finalist & EWA Collaboration Finalist</li>
+      <li>2020 IRE Philip Meyer Journalism Award</li>
+    </ul>
+  </section>
 
-    <section id="awards">
-        <h2>Awards & Recognition</h2>
-        <ul>
-            <li>2021 Pulitzer Prize for Public Service, The New York Times</li>
-            <li>2024-2025 Alabama Press Association Awards for Best Local Education Reporting</li>
-            <li>2022 National Headliner Finalist & EWA Collaboration Finalist</li>
-            <li>2020 IRE Philip Meyer Journalism Award</li>
-        </ul>
-    </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:griesbachwrites@gmail.com">griesbachwrites@gmail.com</a></p>
+    <p>Twitter: <a href="https://twitter.com/greezbock" target="_blank">@greezbock</a></p>
+  </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:griesbachwrites@gmail.com">griesbachwrites@gmail.com</a></p>
-        <p>Twitter: <a href="https://twitter.com/greezbock" target="_blank">@greezbock</a></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Rebecca Griesbach | Portfolio</p>
-    </footer>
+  <footer>&copy; 2025 Rebecca Griesbach | Portfolio</footer>
 </body>
 </html>
