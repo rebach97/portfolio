@@ -1,17 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-<link href="../style.css?v=10" rel="stylesheet">
-<title>New York Times COVID-19 Tracking Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The New York Times COVID-19 Tracking Project | Rebecca Griesbach</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="../style.css?v=12" rel="stylesheet">
+  <style>
+    .featured-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .story-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .story-item {
+      margin-bottom: 25px;
+    }
+    .story-item a {
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+    }
+    .story-item a:hover {
+      text-decoration: underline;
+    }
+    .story-desc {
+      font-size: 0.9em;
+      color: #333;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
-  <h1>New York Times COVID-19 Tracking Project</h1>
-  <img src="../nyt_thumb.png" alt="New York Times COVID-19 Tracking Project" style="max-width:100%; margin:20px 0;">
-  <ul class="links" style="list-style:none; padding:0;">
-    <li><a href="../index.html">← Back to Portfolio</a></li>
-  </ul>
+  <img src="../thumbnails/nyt_thumb.png" alt="The New York Times COVID-19 Tracking Project" class="featured-image">
+
+  <h1 style="text-align:center;">The New York Times COVID-19 Tracking Project</h1>
+
+  <div class="story-list">
+
+    <div class="story-item">
+      <a href="https://www.nytimes.com/interactive/2021/04/10/us/covid-prison-outbreak.html" target="_blank">
+        Incarcerated and Infected: How the Virus Tore Through the U.S. Prison System
+      </a>
+      <div class="story-desc">
+        Investigative project tracking COVID-19 spread inside U.S. prisons, exposing the devastating toll on incarcerated populations.
+      </div>
+    </div>
+
+    <div class="story-item">
+      <a href="https://www.nytimes.com/2021/01/28/us/mississippi-prisons-covid.html" target="_blank">
+        Mississippi Prison Officials Tout Low Rates of Covid. The Reason May Be Fewer Tests.
+      </a>
+      <div class="story-desc">
+        Analysis of testing data revealed systemic undercounting of COVID-19 cases in Mississippi prisons.
+      </div>
+    </div>
+
+    <div class="story-item">
+      <a href="https://www.nytimes.com/2021/05/06/us/coronavirus-inmates-parole.html" target="_blank">
+        Granted Parole or Awaiting Trial, Inmates Died of Covid-19 Behind Bars
+      </a>
+      <div class="story-desc">
+        Investigation of preventable COVID-19 deaths among parole-eligible and pretrial inmates nationwide.
+      </div>
+    </div>
+
+    <div class="story-item">
+      <a href="https://www.nytimes.com/2021/07/07/us/inmates-incarcerated-covid-deaths.html" target="_blank">
+        The Real Toll From Prison Covid Cases May Be Higher Than Reported
+      </a>
+      <div class="story-desc">
+        Follow-up analysis highlighting underreported infections and deaths in carceral facilities.
+      </div>
+    </div>
+
+    <div class="story-item">
+      <a href="https://www.nytimes.com/2020/06/16/us/coronavirus-inmates-prisons-jails.html" target="_blank">
+        Coronavirus Cases Rise Sharply in Prisons Even as They Plateau Nationwide
+      </a>
+      <div class="story-desc">
+        Early pandemic reporting that revealed how COVID-19 continued to surge in prisons as national trends stabilized.
+      </div>
+    </div>
+
+  </div>
+
+  <p style="margin-top:40px; text-align:center;">
+    <a href="../index.html">← Back to Portfolio</a>
+  </p>
 </body>
 </html>
