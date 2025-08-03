@@ -204,7 +204,8 @@ footer {
 /* ===== Responsive Adjustments ===== */
 @media(max-width: 768px) {
   header h1 {
-    font-size: 2em;
+    font-size: 4em;
+    font-family: 'Alexandria', sans-serif;
   }
   section {
     padding: 60px 15px;
