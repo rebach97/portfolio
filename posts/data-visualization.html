@@ -5,22 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Analysis and Visualization | Rebecca Griesbach</title>
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="../style.css?v=12" rel="stylesheet">
   <style>
     body {
       background: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Alexandria', sans-serif;
+      margin-top: 30px;
     }
     .story-list {
-      max-width: 600px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 40px 20px;
     }
     .story-item {
-      margin-bottom: 80px;
+      display: none; /* Only one slide shows at a time */
+      text-align: center;
+    }
+    .story-item.active {
+      display: block;
     }
     .story-item a {
       display: block;
-      font-weight: 800; /* slightly bolder */
+      font-weight: 800;
       font-size: 1.2em;
       color: black;
       margin-bottom: 5px;
@@ -34,28 +43,49 @@
       font-size: 1em;
       line-height: 1.6;
       color: #333;
-      max-width: 600px;
-      margin: 0 0 15px 0; /* left aligned */
+      max-width: 650px;
+      margin: 0 auto 15px auto;
       text-align: left;
     }
     .story-item iframe {
       width: 100%;
-      max-width: 600px; /* smaller charts */
+      max-width: 600px;
       border: none;
-      border-radius: 0px;
+      border-radius: 6px;
       display: block;
-      margin: 0 0 15px 0; /* left aligned */
+      margin: 0 auto;
+    }
+
+    /* Pagination Buttons */
+    .pagination-controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .pagination-controls button {
+      background: #1b263b;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      margin: 5px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .pagination-controls button:hover {
+      background: #ffcc00;
+      color: black;
     }
   </style>
 </head>
 <body>
 
-  <h1 style="text-align:center;">Data Analysis and Visualization</h1>
+  <h1>Data Analysis and Visualization</h1>
 
   <div class="story-list">
 
-    <!-- ICE Arrest Story (first) -->
-    <div class="story-item">
+    <!-- Slide 1 -->
+    <div class="story-item active">
       <a href="https://www.al.com/news/2025/07/arrests-of-alabama-immigrants-soar-as-local-deputies-become-mini-immigration-officers.html" target="_blank">
         <strong>Arrests of Alabama Immigrants Soar as Local Deputies Become “Mini-Immigration Officers”</strong>
       </a>
@@ -65,6 +95,7 @@
       <iframe data-type="datawrapper" src="https://datawrapper.dwcdn.net/zn5hn/10/" scrolling="no"></iframe>
     </div>
 
+    <!-- Slide 2 -->
     <div class="story-item">
       <a href="https://www.al.com/educationlab/2023/03/alabama-colleges-net-tuition-cost-among-top-4-in-the-country.html" target="_blank">
         <strong>Alabama Colleges' Net Tuition Cost Among Top 4 in the Country</strong>
@@ -75,6 +106,7 @@
       <iframe src="https://public.flourish.studio/story/1848749/embed" height="500" scrolling="no"></iframe>
     </div>
 
+    <!-- Slide 3 -->
     <div class="story-item">
       <a href="https://www.al.com/educationlab/2023/01/here-are-alabamas-10-highest-paid-school-superintendents-see-what-your-district-pays.html" target="_blank">
         <strong>Alabama's 10 Highest Paid School Superintendents</strong>
@@ -85,6 +117,7 @@
       <iframe src="https://public.flourish.studio/visualisation/12361036/embed" height="400" scrolling="no"></iframe>
     </div>
 
+    <!-- Slide 4 -->
     <div class="story-item">
       <a href="https://www.al.com/educationlab/2025/07/how-much-does-private-school-cost-in-alabama-see-tuition-for-216-schools.html" target="_blank">
         <strong>How Much Does Private School Cost in Alabama?</strong>
@@ -95,6 +128,7 @@
       <iframe data-type="datawrapper" src="https://datawrapper.dwcdn.net/7zDSF/13/" scrolling="no"></iframe>
     </div>
 
+    <!-- Slide 5 -->
     <div class="story-item">
       <a href="https://www.al.com/educationlab/2025/06/alabama-hands-out-128-million-for-private-school-homeschool-support-whos-getting-money.html" target="_blank">
         <strong>Alabama Hands Out $128 Million for Private School and Homeschool Support</strong>
@@ -105,6 +139,7 @@
       <iframe src="https://public.flourish.studio/visualisation/23803072/embed" height="400" scrolling="no"></iframe>
     </div>
 
+    <!-- Slide 6 -->
     <div class="story-item">
       <a href="https://www.al.com/topic/names%20in%20crimson%20flame/" target="_blank">
         <strong>Names in Crimson Flame</strong>
@@ -115,6 +150,7 @@
       <iframe data-type="datawrapper" src="https://datawrapper.dwcdn.net/wCPFT/5/" scrolling="no"></iframe>
     </div>
 
+    <!-- Slide 7 -->
     <div class="story-item">
       <a href="https://www.al.com/educationlab/2025/01/alabama-schools-arent-last-anymore-new-rankings-show-we-can-do-better.html" target="_blank">
         <strong>Alabama Schools Aren’t Last Anymore – New Rankings Show We Can Do Better</strong>
@@ -127,12 +163,38 @@
 
   </div>
 
+  <!-- Pagination Buttons -->
+  <div class="pagination-controls">
+    <button onclick="prevSlide()">← Previous</button>
+    <button onclick="nextSlide()">Next →</button>
+  </div>
+
   <p style="margin-top:40px; text-align:center;">
     <a href="../index.html">← Back to Portfolio</a>
   </p>
 
-  <!-- Global Datawrapper auto-resize script -->
-  <script type="text/javascript">
+  <!-- JavaScript for Slide Pagination -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.story-item');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+  </script>
+
+  <!-- Datawrapper auto-resize script -->
+  <script>
     window.addEventListener("message", function(event) {
       if (event.data["datawrapper-height"]) {
         const iframes = document.querySelectorAll('iframe[data-type="datawrapper"]');
