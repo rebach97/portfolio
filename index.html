@@ -1,129 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rebecca Griesbach | Journalist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebecca Griesbach | Journalist Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="style.css?v=12" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: #333;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header / Banner */
+    header {
+      position: relative;
+      height: 300px;
+      background: url('banner-image.jpg') center/cover no-repeat;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
+    }
+    header h1 {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      text-align: center;
+      font-family: 'Alexandria', sans-serif;
+      font-weight: 700;
+      font-size: 2.2em;
+      color: black;
+      margin: 0;
+    }
+
+    /* Navigation */
+    nav {
+      background: #1b263b;
+      padding: 25px 0; /* extra padding */
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      font-weight: bold;
+      font-family: 'Alexandria', sans-serif;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 20px 60px;
+    }
+    h2 {
+      color: #222;
+      margin-bottom: 25px;
+      font-size: 2em;
+      text-align: center;
+      font-family: 'Alexandria', sans-serif;
+    }
+
+    /* Clips Grid */
+    .clips {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .clip {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      /* Removed shadow */
+    }
+    .clip:hover {
+      transform: translateY(-5px);
+    }
+    .clip h3 {
+      margin-top: 0;
+      font-size: 1.1em;
+      font-weight: 700;
+      font-family: 'Alexandria', sans-serif;
+    }
+    .clip p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    /* Contact */
+    #contact p {
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0d1b2a;
+      color: white;
+      margin-top: 60px;
+      font-size: 0.9em;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      header {
+        height: 200px;
+      }
+      header h1 {
+        font-size: 1.8em;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>REBECCA GRIESBACH | journalist</header>
-  
+
+  <header>
+    <h1>REBECCA GRIESBACH | journalist</h1>
+  </header>
+
   <nav>
-    <a href="#about">About</a>
-    <a href="#clips">Clips</a>
+    <a href="#clips">Selected Clips</a>
     <a href="#awards">Awards</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am an Alabama-based journalist with five years of experience in statewide and national newsrooms, specializing in investigative reporting, public records, and data-driven storytelling. My reporting focuses on education equity, policy, and systemic challenges impacting schools and communities across the South.</p>
-    <p>I currently serve as AL.com's education and data reporter, leading the education team's K-12 coverage and assisting journalists across the newsroom with data analysis and visualization. I joined AL.com in 2021 as a Report for America corps member, where I was a founding member of the outlet's Education Lab, focusing on opportunity gaps and equity issues in Alabama schools. My prior journalism experience includes a yearlong stint on the New York Times' Pulitzer-winning COVID-19 Tracking Project.</p>
-    <p style="margin-top:20px;"><a href="Rebecca_Griesbach_Resume.pdf" target="_blank">View My Resume</a></p>
+  <section id="clips">
+    <h2>SELECTED CLIPS</h2>
+    <div class="clips">
+
+      <!-- Reordered Collections -->
+      <div class="clip">
+        <h3><a href="data-visualization.html">Data Analysis and Visualization</a></h3>
+        <p>Interactive data stories and visual reporting projects using R, Datawrapper, and Flourish.</p>
+      </div>
+
+      <div class="clip">
+        <h3><a href="investigations.html">Investigations</a></h3>
+        <p>Deep-dive reporting on education, accountability, and civil rights issues in Alabama schools.</p>
+      </div>
+
+      <div class="clip">
+        <h3><a href="national-collaborations.html">National Collaborations</a></h3>
+        <p>Collaborative reporting projects with The Hechinger Report and other national outlets.</p>
+      </div>
+
+      <div class="clip">
+        <h3><a href="legislative-policy.html">Legislative and Policy Reporting</a></h3>
+        <p>Coverage of state policy decisions and their impact on schools and communities.</p>
+      </div>
+
+      <div class="clip">
+        <h3><a href="immigration.html">Immigration and English Learners</a></h3>
+        <p>Stories highlighting the experiences of immigrant families and English language learners in Alabama schools.</p>
+      </div>
+
+      <div class="clip">
+        <h3><a href="desegregation.html">Desegregation Coverage</a></h3>
+        <p>Reporting on school desegregation’s legacy and ongoing equity challenges.</p>
+      </div>
+
+      <div class="clip">
+        <h3><a href="nyt-covid.html">New York Times COVID-19 Tracking Project</a></h3>
+        <p>National coverage of the pandemic’s impact on incarcerated populations, contributing to a Pulitzer Prize for Public Service.</p>
+      </div>
+
+    </div>
   </section>
-
-<section id="clips">
-  <h2>SELECTED CLIPS</h2>
-  <div class="clips">
-
-    <div class="clip">
-      <a href="posts/immigration.html">
-        <img src="https://www.al.com/resizer/v2/7WDTRXXWI5FE7ANKPOXFY2DKEM.jpeg?auth=a170c6fd916ba6744036ab1653eef242c7ffe4c0e411d4e0f7978a9710aff1e3&width=1280&quality=90" alt="Immigration & English Learners">
-        <div class="clip-content">
-          <h3>Immigration & English Learners</h3>
-          <p>Coverage of Alabama schools serving immigrant families and English learners.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="clip">
-      <a href="posts/national-collaborations.html">
-        <img src="https://www.al.com/resizer/v2/IOTGFV3TDRDWRCQU2QSH7QVRGE.jpg?auth=2fc1ff63d5f4fe10e7d170a1120df626c393f51508bf4f292d7128b8e66d3aca&width=1280&quality=90" alt="National Collaborations">
-        <div class="clip-content">
-          <h3>National Collaborations</h3>
-          <p>Ed Lab and Hechinger partnerships highlighting national education stories.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="clip">
-      <a href="posts/desegregation.html">
-        <img src="https://www.al.com/resizer/GYgfM4FsUVRKtmb0Qrpo7CaG05I=/arc-anglerfish-arc2-prod-advancelocal/public/CNQ6X64RU5DR3I4L44XW36UF2E.jpg" alt="Desegregation Coverage">
-        <div class="clip-content">
-          <h3>Desegregation Coverage</h3>
-          <p>Exploring the legacy of school integration and Rosenwald schools in Alabama.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="clip">
-      <a href="posts/state-policy.html">
-        <img src="https://www.al.com/resizer/v2/ZZNDVHR7SVG5PL2URNQDZOGOIY.jpeg?auth=9140315ed58cbca52506fca499de8a3c44b49135ce036cf3c9eba2a5deb3f299&width=1280&quality=90" alt="State Policy">
-        <div class="clip-content">
-          <h3>Legislative & Policy Reporting</h3>
-          <p>Investigations into Alabama’s education policies, funding, and equity issues.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="clip">
-      <a href="posts/civil-rights.html">
-        <img src="https://www.al.com/resizer/v2/JWTYPIWCGFFP5ASU5SIQUAIWTU.jpg?auth=1d3f032b16bca77db4d97cc8a3139a433e248be56a4147a67671760e301a56b9&width=1280&quality=90" alt="Civil Rights Coverage">
-        <div class="clip-content">
-          <h3>Investigations</h3>
-          <p>Parental retaliation, OCR complaints, and civil rights investigations.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="clip">
-      <a href="posts/nyt-covid-tracking.html">
-        <img src="nyt_thumb.png" alt="NYT COVID-19 Tracking Project">
-        <div class="clip-content">
-          <h3>New York Times COVID-19 Tracking Project</h3>
-          <p>Coverage of COVID-19’s impact on incarcerated populations.</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="clip">
-      <a href="posts/data-visualization.html">
-        <img src="data_thumb.png" alt="Data Analysis and Visualization">
-        <div class="clip-content">
-          <h3>Data Analysis and Visualization</h3>
-          <p>Interactive, data-driven stories using R and public records analysis.</p>
-        </div>
-      </a>
-    </div>
-
-  </div>
-</section>
-
 
   <section id="awards">
     <h2>AWARDS</h2>
-    <div class="awards-list">
+    <div style="text-align:center;">
       <p>2024 and 2025 Alabama Press Association Awards for Best Local Education Reporting</p>
-      <p>2022 National Headliner Finalist, <a href="https://hechingerreport.org/tackling-teacher-shortages/" target="_blank"><i>Tackling Teacher Shortages</i></a></p>
-      <p>2022 EWA Finalist for Collaborations, <a href="https://hechingerreport.org/reading-remedies/" target="_blank"><i>Reading Remedies</i></a></p>
+      <p><a href="https://hechingerreport.org/tackling-teacher-shortages/" target="_blank"><i>Tackling Teacher Shortages</i></a>, 2022 National Headliner Finalist</p>
+      <p><a href="https://hechingerreport.org/reading-remedies/" target="_blank"><i>Reading Remedies</i></a>, 2022 EWA Finalist for Collaborations</p>
       <p>2019 SPJ Region 3 Mark of Excellence, Breaking News</p>
       <p>2019 Holle Award for Excellence in Media Writing</p>
       <br>
-      <p><i>The New York Times COVID-19 Tracking Project</i></p>
-      <p>2021 Pulitzer Prize for Public Service</p>
-      <p>2020 IRE Philip Meyer Journalism Award</p>
-      <p>2020 Sigma Delta Chi Public Service Award</p>
+      <i>The New York Times COVID-19 Tracking Project</i><br>
+      2021 Pulitzer Prize for Public Service<br>
+      2020 IRE Philip Meyer Journalism Award<br>
+      2020 Sigma Delta Chi Public Service Award
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2>CONTACT</h2>
     <p>Email: <a href="mailto:griesbachwrites@gmail.com">griesbachwrites@gmail.com</a></p>
     <p>Twitter: <a href="https://twitter.com/greezbock" target="_blank">@greezbock</a></p>
   </section>
 
-  <footer>&copy; 2025 Rebecca Griesbach | Portfolio</footer>
+  <footer>
+    <p>&copy; 2025 Rebecca Griesbach | Portfolio</p>
+  </footer>
+
 </body>
 </html>
