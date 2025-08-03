@@ -6,34 +6,82 @@
   <title>Immigration & English Learners | Rebecca Griesbach</title>
   <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="../style.css?v=12" rel="stylesheet">
+  <style>
+    .featured-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .story-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .story-item {
+      margin-bottom: 25px;
+    }
+    .story-item a {
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+    }
+    .story-item a:hover {
+      text-decoration: underline;
+    }
+    .story-desc {
+      font-size: 0.9em;
+      color: #333;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
-  <img src="https://www.al.com/resizer/v2/7WDTRXXWI5FE7ANKPOXFY2DKEM.jpeg?auth=a170c6fd916ba6744036ab1653eef242c7ffe4c0e411d4e0f7978a9710aff1e3&width=1280&quality=90" alt="Immigration & English Learners" style="max-width:100%; margin:20px 0;">
-  <h1>Immigration & English Learners</h1>
-  <ul class="links">
-    <li>
+  <img src="https://www.al.com/resizer/v2/7WDTRXXWI5FE7ANKPOXFY2DKEM.jpeg?auth=a170c6fd916ba6744036ab1653eef242c7ffe4c0e411d4e0f7978a9710aff1e3&width=1280&quality=90" alt="Immigration & English Learners" class="featured-image">
+
+  <h1 style="text-align:center;">Immigration & English Learners</h1>
+  
+  <div class="story-list">
+
+    <div class="story-item">
       <a href="https://www.al.com/educationlab/2024/11/one-alabama-school-system-responds-to-rise-in-immigration-what-they-deserve.html" target="_blank">
         One Alabama school system responds to rise in immigration
-      </a> – To report this package, I used R/RStudio and tidycensus to combine nearly 30 years of enrollment data with immigration statistics from the American Community Survey.
-    </li>
-    <li>
+      </a>
+      <div class="story-desc">
+        To report this package, I used R/RStudio and tidycensus to combine nearly 30 years of enrollment data with immigration statistics from the American Community Survey.
+      </div>
+    </div>
+
+    <div class="story-item">
       <a href="https://www.al.com/educationlab/2024/08/a-superintendent-made-gains-with-english-learners-was-his-success-his-downfall.html" target="_blank">
         A superintendent made gains with English learners. Was his success his downfall?
-      </a> – Profile of a district leader navigating the challenges of serving immigrant families and the political consequences of his work.
-    </li>
-    <li>
+      </a>
+      <div class="story-desc">
+        Profile of a district leader navigating the challenges of serving immigrant families and the political consequences of his work.
+      </div>
+    </div>
+
+    <div class="story-item">
       <a href="https://www.al.com/educationlab/2022/10/alabama-school-district-celebrates-growing-hispanic-population-amazing-and-beautiful.html" target="_blank">
         Alabama school district celebrates growing Hispanic population: “Amazing and beautiful”
-      </a> – A look at community celebration and the demographic shifts reshaping Alabama classrooms.
-    </li>
-    <li>
+      </a>
+      <div class="story-desc">
+        A look at community celebration and the demographic shifts reshaping Alabama classrooms.
+      </div>
+    </div>
+
+    <div class="story-item">
       <a href="https://www.al.com/news/2025/07/arrests-of-alabama-immigrants-soar-as-local-deputies-become-mini-immigration-officers.html" target="_blank">
         Arrests of Alabama immigrants soar as local deputies become “mini-immigration officers”
-      </a> – Data-driven investigation of local-federal immigration enforcement and its impact on families.
-    </li>
-  </ul>
+      </a>
+      <div class="story-desc">
+        Data-driven investigation of local-federal immigration enforcement and its impact on families.
+      </div>
+    </div>
 
-  <p style="margin-top:30px;">
+  </div>
+
+  <p style="margin-top:40px; text-align:center;">
     <a href="../index.html">← Back to Portfolio</a>
   </p>
 </body>
