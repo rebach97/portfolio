@@ -1,4 +1,16 @@
 
+@font-face {
+  font-family: 'Alexandria';
+  src: url('fonts/Alexandria-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Alexandria';
+  src: url('fonts/Alexandria-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
 /* ===== Global Styles ===== */
 body {
   font-family: 'Montserrat', sans-serif;
@@ -19,40 +31,32 @@ a:hover {
 
 /* ===== Header & Banner ===== */
 header {
-  text-align: center;
-  background: white;
-  color: black;
-  padding: 40px 20px 60px;
   position: relative;
+  width: 100%;
+  height: 35vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 header img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  margin: 0 auto;
 }
 
 header h1 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2.3em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 15px;
-  margin-bottom: 0;
-}
-
-/* Optional: subtle gradient fade below banner */
-header::after {
-  content: '';
-  display: block;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 3rem);
 }
 
 /* ===== Navigation ===== */
@@ -70,7 +74,7 @@ nav a {
   color: black;
   margin: 0 18px;
   font-weight: 600;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Alexandria', sans-serif;
   font-size: 0.95em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -100,7 +104,7 @@ section:nth-of-type(even) {
 
 section h2 {
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Alexandria', sans-serif;
   font-size: 2.2em;
   margin-bottom: 40px;
   letter-spacing: 1px;
@@ -146,8 +150,8 @@ section + section {
 /* Thumbnail container for uniform size */
 .clip-thumb {
   width: 100%;
-  max-width: 320px;       /* control thumbnail width */
-  height: 180px;          /* fixed height for uniformity */
+  max-width: 320px;
+  height: 180px;
   margin: 0 auto 12px;
   overflow: hidden;
   border-radius: 6px;
@@ -156,13 +160,13 @@ section + section {
 .clip-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* crops excess without distortion */
+  object-fit: cover;
   display: block;
 }
 
 /* Clip titles & text */
 .clip h3 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Alexandria', sans-serif;
   font-size: 1em;
   margin: 8px 0 6px 0;
   color: black;
@@ -190,7 +194,6 @@ section + section {
   text-align: center;
 }
 
-/* Remove bullet points */
 #awards ul {
   list-style-type: none;
   padding: 0;
@@ -234,7 +237,7 @@ footer {
   }
   .clip-thumb {
     max-width: 100%;
-    height: 160px; /* slightly shorter on mobile */
+    height: 160px;
   }
   #about p {
     font-size: 0.9em;
