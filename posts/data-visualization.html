@@ -17,11 +17,18 @@
     }
     .story-item {
       margin-bottom: 90px;
+      padding-bottom: 60px; /* space above divider */
       text-align: center;
+      border-bottom: 1px solid #e0e0e0; /* minimalist divider */
+    }
+    .story-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
     .story-item a {
       display: block;
-      font-weight: 700; /* bolder link */
+      font-weight: 700;
       font-size: 1.25em;
       color: black;
       margin-bottom: 5px;
@@ -35,7 +42,7 @@
       line-height: 1.6;
       color: #333;
       max-width: 650px;
-      margin: 0 auto 15px auto; /* space before the chart */
+      margin: 0 auto 15px auto;
     }
     .story-item iframe {
       width: 100%;
@@ -51,7 +58,7 @@
 
   <div class="story-list">
 
-    <!-- ICE Arrest Story: moved to top -->
+    <!-- ICE Arrest Story (first) -->
     <div class="story-item">
       <a href="https://www.al.com/news/2025/07/arrests-of-alabama-immigrants-soar-as-local-deputies-become-mini-immigration-officers.html" target="_blank">
         <strong>Arrests of Alabama Immigrants Soar as Local Deputies Become “Mini-Immigration Officers”</strong>
