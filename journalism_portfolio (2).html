@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebecca Griesbach | Journalist Portfolio</title>
+    <style>
+        /* Global Styles */
+        * { box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
+        a { color: #0077cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Header */
+        header { background: linear-gradient(to right, #0d1b2a, #1b263b); color: white; text-align: center; padding: 80px 20px 100px; position: relative; }
+        header img { width: 160px; height: 160px; border-radius: 50%; border: 4px solid white; position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        header h1 { margin: 0; font-size: 2.8em; }
+        header p { font-size: 1.2em; margin-top: 15px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* Navigation */
+        nav { background: #1b263b; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; margin: 0 20px; font-weight: bold; font-size: 1em; }
+        nav a:hover { color: #ffcc00; }
+
+        /* Sections */
+        section { max-width: 1200px; margin: auto; padding: 100px 20px 60px; }
+        h2 { color: #222; margin-bottom: 25px; font-size: 2em; text-align: center; }
+        p { line-height: 1.6; }
+
+        /* Clips Grid */
+        .clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .clip { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .clip:hover { transform: translateY(-8px); box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+        .clip h3 { margin-top: 0; font-size: 1.2em; }
+        .clip p { font-size: 0.95em; color: #555; }
+
+        /* Awards */
+        ul { list-style-type: none; padding: 0; max-width: 600px; margin: auto; }
+        ul li { background: white; margin-bottom: 15px; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+        ul li:hover { transform: translateY(-5px); }
+
+        /* Contact */
+        #contact p { text-align: center; font-size: 1.1em; }
+
+        /* Footer */
+        footer { text-align: center; padding: 30px; background: #0d1b2a; color: white; margin-top: 60px; font-size: 0.9em; }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            header p { font-size: 1em; }
+            nav a { margin: 0 10px; font-size: 0.9em; }
+            header img { width: 120px; height: 120px; bottom: -60px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rebecca Griesbach</h1>
+        <p>Award-Winning Data & Education Reporter | AL.com & The New York Times</p>
+        <img src="image001.jpeg" alt="Rebecca Griesbach Headshot">
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#clips">Clips</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a Pulitzer Prize-winning data and education journalist specializing in investigative reporting, public records, and data-driven storytelling. My work focuses on education equity, policy, and systemic challenges impacting schools and communities.</p>
+        <p style="text-align:center; margin-top:20px;"><a href="Rebecca_Griesbach_Resume.pdf" target="_blank">Download My Resume (PDF)</a></p>
+    </section>
+
+    <section id="clips">
+        <h2>Selected Clips</h2>
+        <div class="clips">
+            <div class="clip">
+                <h3><a href="https://www.al.com/educationlab/2024/11/immigration-brings-complex-changes-to-alabama-towns-schools-data-shows.html" target="_blank">Immigration Brings Complex Changes to Alabama Schools</a></h3>
+                <p>Data-driven package examining the rise of immigrant populations in Alabama schools, presented at EWA and NAHJ national conferences.</p>
+            </div>
+            <div class="clip">
+                <h3><a href="https://hechingerreport.org/crt-debate-repeats-past-battles-about-state-history-textbooks/" target="_blank">CRT Debate Repeats Past Battles</a></h3>
+                <p>Investigative feature tracing a century of Alabama textbook controversies and how they shape today’s classroom debates.</p>
+            </div>
+            <div class="clip">
+                <h3><a href="https://www.al.com/educationlab/2023/07/alabama-mom-alleges-retaliation-after-ban-from-local-schools-feds-investigating.html" target="_blank">Alabama Mom Alleges School Retaliation</a></h3>
+                <p>Exclusive investigation uncovering patterns of parental retaliation, leading to a federal class-action lawsuit against the U.S. Department of Education.</p>
+            </div>
+            <div class="clip">
+                <h3><a href="https://www.al.com/educationlab/2024/05/brown-v-board-integrated-classes-but-left-black-schoolhouses-behind-saving-alabamas-rosenwald-schools.html" target="_blank">Brown v. Board: What Was Left Behind</a></h3>
+                <p>Historical series reflecting on desegregation’s legacy and efforts to preserve Alabama’s Rosenwald schools.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <h2>Awards & Recognition</h2>
+        <ul>
+            <li>2021 Pulitzer Prize for Public Service, The New York Times</li>
+            <li>2024-2025 Alabama Press Association Awards for Best Local Education Reporting</li>
+            <li>2022 National Headliner Finalist & EWA Collaboration Finalist</li>
+            <li>2020 IRE Philip Meyer Journalism Award</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:griesbachwrites@gmail.com">griesbachwrites@gmail.com</a></p>
+        <p>Twitter: <a href="https://twitter.com/greezbock" target="_blank">@greezbock</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rebecca Griesbach | Portfolio</p>
+    </footer>
+</body>
+</html>
