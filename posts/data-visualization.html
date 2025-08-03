@@ -12,15 +12,15 @@
       margin: 0 auto;
     }
     .story-item {
-      margin-bottom: 50px;
+      margin-bottom: 70px; /* Increased spacing */
       text-align: center;
     }
     .story-item iframe {
       width: 100%;
-      max-width: 800px;
+      max-width: 700px; /* Slightly smaller charts */
       border: none;
       border-radius: 6px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     .story-item a {
       font-weight: bold;
@@ -36,7 +36,7 @@
     .story-desc {
       font-size: 0.9em;
       color: #333;
-      max-width: 750px;
+      max-width: 650px;
       margin: 0 auto;
     }
   </style>
@@ -48,7 +48,7 @@
   <div class="story-list">
 
     <div class="story-item">
-      <iframe src="https://public.flourish.studio/story/1848749/embed" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/story/1848749/embed" height="500" scrolling="no"></iframe>
       <a href="https://www.al.com/educationlab/2023/03/alabama-colleges-net-tuition-cost-among-top-4-in-the-country.html" target="_blank">
         Alabama Colleges' Net Tuition Cost Among Top 4 in the Country
       </a>
@@ -58,7 +58,7 @@
     </div>
 
     <div class="story-item">
-      <iframe src="https://public.flourish.studio/visualisation/12361036/embed" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/visualisation/12361036/embed" height="500" scrolling="no"></iframe>
       <a href="https://www.al.com/educationlab/2023/01/here-are-alabamas-10-highest-paid-school-superintendents-see-what-your-district-pays.html" target="_blank">
         Alabama's 10 Highest Paid School Superintendents
       </a>
@@ -68,7 +68,7 @@
     </div>
 
     <div class="story-item">
-      <iframe src="https://datawrapper.dwcdn.net/zn5hn/10/" scrolling="no"></iframe>
+      <iframe data-type="datawrapper" src="https://datawrapper.dwcdn.net/zn5hn/10/" scrolling="no"></iframe>
       <a href="https://www.al.com/news/2025/07/arrests-of-alabama-immigrants-soar-as-local-deputies-become-mini-immigration-officers.html" target="_blank">
         Arrests of Alabama Immigrants Soar as Local Deputies Become “Mini-Immigration Officers”
       </a>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="story-item">
-      <iframe src="https://datawrapper.dwcdn.net/7zDSF/13/" scrolling="no"></iframe>
+      <iframe data-type="datawrapper" src="https://datawrapper.dwcdn.net/7zDSF/13/" scrolling="no"></iframe>
       <a href="https://www.al.com/educationlab/2025/07/how-much-does-private-school-cost-in-alabama-see-tuition-for-216-schools.html" target="_blank">
         How Much Does Private School Cost in Alabama?
       </a>
@@ -88,7 +88,7 @@
     </div>
 
     <div class="story-item">
-      <iframe src="https://public.flourish.studio/visualisation/23803072/embed" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/visualisation/23803072/embed" height="500" scrolling="no"></iframe>
       <a href="https://www.al.com/educationlab/2025/06/alabama-hands-out-128-million-for-private-school-homeschool-support-whos-getting-money.html" target="_blank">
         Alabama Hands Out $128 Million for Private School and Homeschool Support
       </a>
@@ -98,7 +98,7 @@
     </div>
 
     <div class="story-item">
-      <iframe src="https://datawrapper.dwcdn.net/wCPFT/5/" scrolling="no"></iframe>
+      <iframe data-type="datawrapper" src="https://datawrapper.dwcdn.net/wCPFT/5/" scrolling="no"></iframe>
       <a href="https://www.al.com/topic/names%20in%20crimson%20flame/" target="_blank">
         Names in Crimson Flame
       </a>
@@ -108,7 +108,7 @@
     </div>
 
     <div class="story-item">
-      <iframe src="https://public.flourish.studio/visualisation/21361995/embed" scrolling="no"></iframe>
+      <iframe src="https://public.flourish.studio/visualisation/21361995/embed" height="500" scrolling="no"></iframe>
       <a href="https://www.al.com/educationlab/2025/01/alabama-schools-arent-last-anymore-new-rankings-show-we-can-do-better.html" target="_blank">
         Alabama Schools Aren’t Last Anymore – New Rankings Show We Can Do Better
       </a>
@@ -127,10 +127,13 @@
   <script type="text/javascript">
     window.addEventListener("message", function(event) {
       if (event.data["datawrapper-height"]) {
+        const iframes = document.querySelectorAll('iframe[data-type="datawrapper"]');
         for (const chartId in event.data["datawrapper-height"]) {
-          const iframe = document.querySelector("iframe[src*='" + chartId + "']");
-          if (iframe) {
-            iframe.style.height = event.data["datawrapper-height"][chartId] + "px";
+          for (let i = 0; i < iframes.length; i++) {
+            const iframe = iframes[i];
+            if (iframe.contentWindow === event.source) {
+              iframe.style.height = event.data["datawrapper-height"][chartId] + "px";
+            }
           }
         }
       }
