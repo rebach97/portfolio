@@ -84,6 +84,12 @@ nav a:hover {
   color: #0077cc;
 }
 
+nav a.active {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 2px;
+}
+
 /* ===== Section Styling ===== */
 section {
   padding: 80px 20px;
@@ -93,7 +99,7 @@ section {
 }
 
 section:nth-of-type(even) {
-  background: #f9f9f9; /* subtle alternating background */
+  background: #f9f9f9;
 }
 
 section h2 {
@@ -123,16 +129,17 @@ section + section {
 /* ===== Clips Grid Styling ===== */
 .clips {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
 }
 
 .clip {
   background: white;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
 }
 
 .clip:hover {
@@ -140,16 +147,34 @@ section + section {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+/* Thumbnail container for uniform size */
+.clip-thumb {
+  width: 100%;
+  max-width: 320px;       /* control thumbnail width */
+  height: 180px;          /* fixed height for uniformity */
+  margin: 0 auto 12px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.clip-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* crops excess without distortion */
+  display: block;
+}
+
+/* Clip titles & text */
 .clip h3 {
   font-family: 'Alexandria', sans-serif;
-  font-size: 1.1em;
-  margin: 0 0 8px 0;
+  font-size: 1em;
+  margin: 8px 0 6px 0;
   color: black;
 }
 
 .clip p {
-  font-size: 0.9em;
-  line-height: 1.5;
+  font-size: 0.85em;
+  line-height: 1.4;
   color: #555;
   margin: 0;
 }
@@ -159,7 +184,7 @@ section + section {
   text-align: center;
 }
 
-#awards p, 
+#awards p,
 #awards li {
   font-size: 0.95em;
   line-height: 1.5;
@@ -206,10 +231,14 @@ footer {
     margin-bottom: 30px;
   }
   .clips {
-    gap: 20px;
+    gap: 15px;
   }
   .clip {
-    padding: 15px;
+    padding: 12px;
+  }
+  .clip-thumb {
+    max-width: 100%;
+    height: 160px; /* slightly shorter on mobile */
   }
   #about p {
     font-size: 0.9em;
