@@ -13,7 +13,7 @@ h1, h2, h3, header, nav, footer {
 header {
   width: 100%;
   color: white;
-  font-size: 2.5em;
+  font-size: 1.6em;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -31,7 +31,9 @@ section { min-height: 100vh; padding: 40px; display: flex; flex-direction: colum
 .clip { border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
 .clip img { width: 100%; display: block; }
 .clip-content { padding: 10px; }
-.clip-content h3 a, .clip-content h3 a:visited { color: black; text-decoration: none; }
-.clip-content h3 a:hover { text-decoration: underline; }
+.clip a, .clip a:visited { color: black; text-decoration: none; display: block; }
+.clip a:hover { text-decoration: underline; }
 .awards-list { text-align:center; }
 .awards-list p { margin: 5px 0; }
+.links a, .links a:visited { color:black; text-decoration:none; }
+.links a:hover { text-decoration:underline; }
