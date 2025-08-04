@@ -124,8 +124,7 @@
 <footer>© 2025 Rebecca Griesbach | Portfolio</footer>
 
 <script>
-  const logo = document.querySelector('.logo');
-  const headerHeight = document.querySelector('header').offsetHeight;
+  const nav = document.querySelector('nav');
   const navLinks = document.querySelectorAll('nav a');
   const sections = document.querySelectorAll('section');
   const menuToggle = document.getElementById('mobile-menu');
@@ -136,7 +135,7 @@
     navMenu.classList.toggle('show');
   });
 
-  // Smooth scroll for nav links
+  // Smooth scroll and close mobile menu on click
   navLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
@@ -147,31 +146,29 @@
           top: targetSection.offsetTop - 60, // offset for sticky nav
           behavior: 'smooth'
         });
-        navMenu.classList.remove('show'); // close mobile menu
+        navMenu.classList.remove('show'); // close menu after click
       }
     });
   });
 
-  // Scroll event for logo fade and active link highlighting
+  // Scroll event: highlight active link + shrink nav
   window.addEventListener('scroll', () => {
-    // 1. Show/hide logo based on header visibility
-    if (window.scrollY > headerHeight - 60) {
-      logo.classList.add('show');
+    // 1. Shrink nav
+    if (window.scrollY > 50) {
+      nav.classList.add('shrink');
     } else {
-      logo.classList.remove('show');
+      nav.classList.remove('shrink');
     }
 
-    // 2. Highlight active nav link
+    // 2. Highlight active section link
     let currentSection = "";
-    if (window.scrollY > 50) {
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-          currentSection = section.getAttribute('id');
-        }
-      });
-    }
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute('id');
+      }
+    });
 
     navLinks.forEach(link => {
       link.classList.remove('active');
