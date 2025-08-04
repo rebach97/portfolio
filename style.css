@@ -83,7 +83,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin: 5px auto;
+  margin: 0 auto;
   height: 70px;
   transition: height 0.3s ease;
 }
@@ -96,6 +96,7 @@ nav.shrink .nav-container {
   font-family: 'Alexandria', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
+  padding: 5 px;
   color: black;
   opacity: 1;
   transition: font-size 0.3s ease;
@@ -110,7 +111,7 @@ nav.shrink .logo {
   gap: 20px;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 5px;
 }
 
 .nav-links li a {
