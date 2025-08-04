@@ -31,7 +31,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: bold;
   color: #ffcc00;
   
 }
@@ -87,7 +87,6 @@ nav a:hover {
 
 nav a.active {
   color: #ffcc00 !important; /* force yellow color */
-  border-bottom: 2px solid #ffcc00 !important;
   padding-bottom: 2px !important;
 }
 
