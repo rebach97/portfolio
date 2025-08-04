@@ -136,6 +136,19 @@ nav {
   cursor: pointer;
 }
 
+.logo {
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: black;
+  opacity: 0;             /* Start invisible */
+  transition: opacity 0.3s ease;  /* Smooth fade-in */
+}
+
+.logo.show {
+  opacity: 1;             /* Becomes visible */
+}
+
 /* ===== Responsive Styles ===== */
 @media(max-width: 768px) {
   .menu-toggle {
