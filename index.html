@@ -124,24 +124,61 @@ by<!DOCTYPE html>
 <footer>© 2025 Rebecca Griesbach | Portfolio</footer>
 
 <script>
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('mobile-menu');
-  const navLinks = document.querySelector('.nav-links');
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-</script>
-<script>
   const logo = document.querySelector('.logo');
   const headerHeight = document.querySelector('header').offsetHeight;
+  const navLinks = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('section');
+  const menuToggle = document.getElementById('mobile-menu');
+  const navMenu = document.querySelector('.nav-links');
 
+  // Mobile menu toggle
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+
+  // Smooth scroll for nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop - 60, // offset for sticky nav
+          behavior: 'smooth'
+        });
+        navMenu.classList.remove('show'); // close mobile menu
+      }
+    });
+  });
+
+  // Scroll event for logo fade and active link highlighting
   window.addEventListener('scroll', () => {
+    // 1. Show/hide logo based on header visibility
     if (window.scrollY > headerHeight - 60) {
       logo.classList.add('show');
     } else {
       logo.classList.remove('show');
     }
+
+    // 2. Highlight active nav link
+    let currentSection = "";
+    if (window.scrollY > 50) {
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (currentSection && link.getAttribute('href').includes(currentSection)) {
+        link.classList.add('active');
+      }
+    });
   });
 </script>
 
