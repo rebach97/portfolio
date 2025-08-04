@@ -68,13 +68,14 @@ header::after {
 
 
 /* ===== Responsive Navigation ===== */
+/* Default nav */
 nav {
   background: white;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0 20px;
+  transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -83,7 +84,12 @@ nav {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  height: 60px;
+  height: 70px;
+  transition: height 0.3s ease;
+}
+
+nav.shrink .nav-container {
+  height: 50px;
 }
 
 .logo {
@@ -91,20 +97,14 @@ nav {
   font-weight: 700;
   font-size: 1.1rem;
   color: black;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.logo.show {
   opacity: 1;
+  transition: font-size 0.3s ease;
 }
 
-nav a.active {
-  color: #ffcc00;
-  border-bottom: 2px solid #ffcc00;
-  padding-bottom: 2px;
+nav.shrink .logo {
+  font-size: 1rem;
 }
-/* Desktop nav links */
+
 .nav-links {
   display: flex;
   gap: 20px;
@@ -120,6 +120,7 @@ nav a.active {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.9rem;
+  transition: padding 0.3s ease, color 0.3s ease;
 }
 
 .nav-links li a.active {
@@ -128,16 +129,13 @@ nav a.active {
   padding-bottom: 2px;
 }
 
-/* Mobile menu toggle (hidden on desktop) */
+/* Mobile menu */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
 }
 
-
-
-/* ===== Responsive Styles ===== */
 @media(max-width: 768px) {
   .menu-toggle {
     display: block;
