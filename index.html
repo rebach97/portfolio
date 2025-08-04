@@ -154,12 +154,6 @@
 
   // Scroll event for logo fade and active link highlighting
   window.addEventListener('scroll', () => {
-    // 1. Show/hide logo based on header visibility
-    if (window.scrollY > headerHeight - 60) {
-      logo.classList.add('show');
-    } else {
-      logo.classList.remove('show');
-    }
 
     // 2. Highlight active nav link
     let currentSection = "";
