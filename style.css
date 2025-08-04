@@ -120,13 +120,13 @@ nav a.active::after {
 /* ===== Section Styling ===== */
 section {
   padding: 80px 20px;
-  max-width: 1200px;
   margin: 0 auto;
   border-bottom: 1px solid #eee;
 }
 
 section:nth-of-type(even) {
   background: #f9f9f9;
+  margin: 0;
 }
 
 section h2 {
