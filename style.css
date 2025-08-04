@@ -73,6 +73,16 @@ header h1 {
 }
 
 /* ===== Navigation ===== */
+nav a:hover {
+  color: #ffcc00;
+}
+
+nav a.active {
+  color: #ffcc00 !important; /* force yellow color */
+  border-bottom: 2px solid #ffcc00 !important;
+  padding-bottom: 2px !important;
+}
+
 nav {
   background: white;
   padding: 15px;
@@ -93,15 +103,17 @@ nav a {
   letter-spacing: 0.5px;
 }
 
-nav a:hover {
-  color: #0077cc;
+nav a.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ffcc00;
 }
 
-nav a.active {
-  color: #ffcc00;
-  border-bottom: 2px solid #ffcc00;
-  padding-bottom: 2px;
-}
 
 /* ===== Section Styling ===== */
 section {
