@@ -79,46 +79,97 @@ header h1 {
 
 
 
-/* ===== Navigation ===== */
-nav a:hover {
-  color: #ffcc00;
-}
-
-nav a.active {
-  color: #ffcc00 !important; /* force yellow color */
-  padding-bottom: 2px !important;
-}
-
+/* ===== Responsive Navigation ===== */
 nav {
   background: white;
-  padding: 15px;
-  text-align: center;
+  border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
-  z-index: 100;
-  border-bottom: 1px white;
+  z-index: 1000;
+  padding: 0 20px;
 }
 
-nav a {
-  color: black;
-  margin: 0 18px;
-  font-weight: 600;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+}
+
+.logo {
   font-family: 'Alexandria', sans-serif;
-  font-size: 0.95em;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: black;
 }
 
-nav a.active::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: white;
+/* Desktop nav links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Alexandria', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.nav-links li a.active {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 2px;
+}
+
+/* Mobile menu toggle (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ===== Responsive Styles ===== */
+@media(max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    padding-left: 10px;
+  }
+}
+
+
+
 
 
 /* ===== Section Styling ===== */
