@@ -152,20 +152,6 @@
     });
   });
 
-  // Scroll event for logo fade and active link highlighting
-  window.addEventListener('scroll', () => {
-
-    // 2. Highlight active nav link
-    let currentSection = "";
-    if (window.scrollY > 50) {
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-          currentSection = section.getAttribute('id');
-        }
-      });
-    }
 
     navLinks.forEach(link => {
       link.classList.remove('active');
