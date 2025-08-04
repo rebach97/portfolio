@@ -190,7 +190,7 @@ section:nth-of-type(even) {
 section h2 {
   text-align: left;
   font-family: 'Alexandria', sans-serif;
-  font-size: 2.2em;
+  font-size: 2em;
   margin-bottom: 40px;
   letter-spacing: 1px;
   border-bottom: 2px solid #ddd;
@@ -204,11 +204,11 @@ section + section {
 
 /* ===== About Section ===== */
 #about p {
-  font-size: 0.95em;
+  font-size: 0.75em;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 /* ===== Clips Grid Styling ===== */
