@@ -156,7 +156,7 @@ section + section {
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto 20px;
-  text-align: center;
+  text-align: left;
 }
 
 /* ===== Clips Grid Styling ===== */
