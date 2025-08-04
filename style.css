@@ -27,6 +27,8 @@ a {
 
 a:hover {
   text-decoration: underline;
+  color: #ffcc00;
+  
 }
 
 /* ===== Header & Banner ===== */
@@ -206,7 +208,7 @@ section + section {
 
 /* ===== Awards & Recognition ===== */
 #awards {
-  text-align: center;
+  text-align: left;
 }
 
 #awards p,
