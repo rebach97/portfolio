@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap') format('truetype');
+  font-weight: 400;
+}
 
 @font-face {
   font-family: 'Alexandria';
