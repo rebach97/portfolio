@@ -65,18 +65,6 @@ header::after {
   pointer-events: none;
 }
 
-header h1 {
-  position: relative;
-  z-index: 2;
-  font-family: 'Alexandria', sans-serif;
-  font-weight: 700;
-  color: white;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  margin: 0 0 .5%;
-  text-align: center;
-}
-
 
 
 /* ===== Responsive Navigation ===== */
