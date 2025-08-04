@@ -39,6 +39,10 @@ header {
   overflow: hidden;
   margin: 0;
   padding: 0;
+
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: flex-end;     /* stick text to bottom */
 }
 
 header img {
@@ -61,18 +65,13 @@ header::after {
 }
 
 header h1 {
-  position: absolute;
-  bottom: 5%;
-  text-align: center;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2; 
   font-family: 'Alexandria', sans-serif;
   font-weight: 700;
   color: white;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-  margin: 0;
-  font-size: clamp(3rem, 1vw, 2rem);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin: 0 0 3%; /* small margin from bottom */
+  text-align: center;
 }
 
 /* ===== Navigation ===== */
