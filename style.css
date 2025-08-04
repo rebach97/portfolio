@@ -63,7 +63,7 @@ header::after {
 header h1 {
   position: absolute;
   bottom: 5%;
-  left: 50%;
+  left: 40%;
   transform: translateX(-50%);
   z-index: 2; 
   font-family: 'Alexandria', sans-serif;
@@ -71,7 +71,7 @@ header h1 {
   color: white;
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
   margin: 0;
-  font-size: clamp(3rem, 4vw, 3rem);
+  font-size: clamp(3rem, 4vw, 2rem);
 }
 
 /* ===== Navigation ===== */
