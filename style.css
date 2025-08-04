@@ -30,9 +30,6 @@ a:hover {
   color: #ffcc00;
   
 }
-
-/* ===== Header & Banner ===== */
-
 header {
   position: relative;
   width: 100%;
@@ -65,7 +62,7 @@ header::after {
 
 header h1 {
   position: relative;
-  z-index: 2;
+  z-index: 2; /* Above gradient */
   font-family: 'Alexandria', sans-serif;
   font-weight: 700;
   color: white;
@@ -74,6 +71,7 @@ header h1 {
   margin: 0 0 3%;
   text-align: center;
 }
+
 /* ===== Navigation ===== */
 nav a:hover {
   color: #ffcc00;
