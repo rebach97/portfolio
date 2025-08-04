@@ -9,7 +9,7 @@
 <link href="style.css?v=12" rel="stylesheet"/>
 </head>
 <body>
-<header><img alt="Rebecca Griesbach Banner" src="https://cdn.bsky.app/img/banner/plain/did:plc:vcchby7oxg7y5k5ozlgrr7ra/bafkreifc25eguvkqxwu64b3ekajdham7vntlwqbvfoj42gxj33bfxvzzuy@jpeg"/><h1>REBECCA GRIESBACH</h1></header>
+<header><img alt="Rebecca Griesbach Banner" src="https://cdn.bsky.app/img/banner/plain/did:plc:vcchby7oxg7y5k5ozlgrr7ra/bafkreifc25eguvkqxwu64b3ekajdham7vntlwqbvfoj42gxj33bfxvzzuy@jpeg"/></header>
 <nav>
   <div class="nav-container">
     <div class="logo">Rebecca Griesbach, journalist</div>
@@ -152,6 +152,26 @@
     });
   });
 
+  // Scroll event for logo fade and active link highlighting
+  window.addEventListener('scroll', () => {
+    // 1. Show/hide logo based on header visibility
+    if (window.scrollY > headerHeight - 60) {
+      logo.classList.add('show');
+    } else {
+      logo.classList.remove('show');
+    }
+
+    // 2. Highlight active nav link
+    let currentSection = "";
+    if (window.scrollY > 50) {
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+    }
 
     navLinks.forEach(link => {
       link.classList.remove('active');
