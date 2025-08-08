@@ -288,24 +288,37 @@ section + section {
   margin: 0;
 }
 
-/* ===== Awards & Recognition ===== */
-#awards {
-  text-align: center;
+/* Awards section responsiveness */
+#awards .awards-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-#awards p,
-#awards li {
-  font-size: 0.75em;
-  line-height: 1.5;
-  color: #333;
-  max-width: 700px;
-  margin: 5px auto;
-  text-align: left;
+#awards p {
+  font-size: 0.85em;
+  line-height: 1.6;
 }
 
-#awards ul {
-  list-style-type: none;
-  padding: 0;
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  #awards p {
+    font-size: 0.95em;  /* slightly bigger for legibility */
+    line-height: 1.5;
+  }
+
+  #awards .awards-list {
+    padding: 0 10px;  /* less cramped margins */
+  }
+  
+  #awards p + p {
+    margin-top: 0.5em; /* consistent spacing between lines */
+  }
+  
+  #awards b {
+    display: block;     /* put category titles on their own line */
+    margin-top: 1em;
+  }
 }
 
 /* ===== Contact Section ===== */
