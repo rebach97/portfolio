@@ -321,6 +321,7 @@ section + section {
   #awards b {
     display: block;     /* put category titles on their own line */
     margin-top: 1em;
+    font-size:1.25em;
   }
 }
 
