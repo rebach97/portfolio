@@ -242,7 +242,7 @@ section + section {
 /* Clip container */
 .clip-thumb {
   width: 100%;
-  height: 220px; /* default desktop height */
+  height: 180px; /* default desktop height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,6 +252,13 @@ section + section {
 
 /* Clip images */
 .clip-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: cover; /* show full image, no cropping */
+}
+
+.clip-thumb img 2{
   max-width: 100%;
   max-height: 100%;
   height: auto;
