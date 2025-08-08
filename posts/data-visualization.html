@@ -117,11 +117,11 @@
     }
 
     /* Chart iframe */
-    .story-item iframe {
-    max-width: 100% !important;      /* smaller on desktop */
-    height: auto;        /* keep aspect ratio */
-  }
-
+    .story-item iframe {           
+      margin: 0 auto;               /* center horizontally */
+      max-width: 100% !important;   /* full width of card */
+      height: auto;                  /* respect embed height attribute */
+    }
 /* Mobile chart full width */
   @media (max-width: 700px) {
     .story-item iframe {
