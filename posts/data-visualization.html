@@ -12,6 +12,7 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      color: #333;
     }
 
     /* Breadcrumb */
@@ -33,33 +34,68 @@
     h1 {
       text-align: center;
       font-family: 'Alexandria', sans-serif;
-      margin: 20px auto;
+      margin: 20px auto 10px;
       font-size: 2em;
       max-width: 90%;
     }
 
-    /* Story container */
+    /* Jump menu container */
+    .jump-menu {
+      max-width: 950px;
+      margin: 0 auto 25px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    /* Desktop horizontal links */
+    .jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+    .jump-links button {
+      padding: 8px 12px;
+      font-size: 0.9em;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #f5f5f5;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .jump-links button:hover {
+      background: #ffcc00;
+      border-color: #ffcc00;
+      color: black;
+    }
+
+    /* Mobile dropdown */
+    .jump-dropdown {
+      display: none;
+    }
+    .jump-dropdown select {
+      padding: 8px 10px;
+      font-size: 1em;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      max-width: 100%;
+    }
+
+    /* Story list container */
     .story-list {
       max-width: 950px;
       margin: 0 auto;
       padding: 20px;
     }
 
-    /* Story item */
+    /* Story card */
     .story-item {
-      display: none;
-      flex-direction: column;
-      gap: 16px;
-      opacity: 0;
-      transition: opacity 0.4s ease;
       padding: 20px;
+      margin-bottom: 25px;
       border: 1px solid #eee;
       border-radius: 8px;
       background: #fff;
-    }
-    .story-item.active {
-      display: flex;
-      opacity: 1;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
 
     /* Story title link */
@@ -77,7 +113,7 @@
     /* Description */
     .story-desc {
       font-size: 1em;
-      color: #333;
+      margin: 10px 0;
     }
 
     /* Chart iframe */
@@ -85,35 +121,22 @@
       width: 100%;
       max-width: 700px;
       border: none;
-      align-self: center;
+      display: block;
+      margin: 0 auto;
     }
 
-    /* Pagination */
-    .pagination-controls {
+    /* Back link */
+    .back-link {
       text-align: center;
-      margin-top: 20px;
+      margin: 30px 0;
     }
-    .pagination-controls button {
-      background: #1b263b;
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      margin: 5px;
-      font-size: 1em;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .pagination-controls button:hover {
-      background: #ffcc00;
-      color: black;
-    }
-    #progress-indicator {
-      text-align: center;
-      margin-top: 8px;
-      font-size: 0.9em;
+    .back-link a {
       color: #555;
-      font-family: 'Alexandria', sans-serif;
+      text-decoration: none;
+    }
+    .back-link a:hover {
+      color: #000;
+      text-decoration: underline;
     }
 
     /* Mobile adjustments */
@@ -130,6 +153,14 @@
       .story-desc {
         font-size: 0.95em;
       }
+
+      /* Hide desktop bar, show dropdown */
+      .jump-links {
+        display: none;
+      }
+      .jump-dropdown {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -142,10 +173,39 @@
 
   <h1>Data Analysis and Visualization</h1>
 
+  <!-- Jump Menu -->
+  <div class="jump-menu">
+    <!-- Desktop/Tablet Horizontal Links -->
+    <div class="jump-links">
+      <button onclick="jumpToStory('#story1')">Arrests of Alabama Immigrants Soar</button>
+      <button onclick="jumpToStory('#story2')">Alabama Colleges' Net Tuition</button>
+      <button onclick="jumpToStory('#story3')">Highest Paid Superintendents</button>
+      <button onclick="jumpToStory('#story4')">Private School Cost</button>
+      <button onclick="jumpToStory('#story5')">Private & Homeschool Funding</button>
+      <button onclick="jumpToStory('#story6')">Names in Crimson Flame</button>
+      <button onclick="jumpToStory('#story7')">Alabama Schools Rankings</button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="jump-dropdown">
+      <label for="storyJump" class="visually-hidden">Jump to story:</label>
+      <select id="storyJump" onchange="jumpToStory(this.value)">
+        <option value="">-- Jump to a story --</option>
+        <option value="#story1">Arrests of Alabama Immigrants Soar</option>
+        <option value="#story2">Alabama Colleges' Net Tuition</option>
+        <option value="#story3">Highest Paid Superintendents</option>
+        <option value="#story4">Private School Cost</option>
+        <option value="#story5">Private & Homeschool Funding</option>
+        <option value="#story6">Names in Crimson Flame</option>
+        <option value="#story7">Alabama Schools Rankings</option>
+      </select>
+    </div>
+  </div>
+
   <div class="story-list">
-    <!-- All your existing .story-item slides go here exactly as in your original file -->
-    <!-- Example -->
-    <div class="story-item active">
+
+    <!-- Story 1 -->
+    <div class="story-item" id="story1">
       <a href="https://www.al.com/news/2025/07/arrests-of-alabama-immigrants-soar-as-local-deputies-become-mini-immigration-officers.html" target="_blank">
         Arrests of Alabama Immigrants Soar as Local Deputies Become “Mini-Immigration Officers”
       </a>
@@ -155,56 +215,88 @@
       <iframe data-type="datawrapper" src="https://datawrapper.dwcdn.net/zn5hn/10/" scrolling="no"></iframe>
     </div>
 
-    <!-- Repeat for all 7 stories exactly as before -->
-    <!-- ... -->
+    <!-- Story 2 -->
+    <div class="story-item" id="story2">
+      <a href="https://www.al.com/educationlab/2023/03/alabama-colleges-net-tuition-cost-among-top-4-in-the-country.html" target="_blank">
+        Alabama Colleges' Net Tuition Cost Among Top 4 in the Country
+      </a>
+      <div class="story-desc">
+        Analysis of rising higher education costs in Alabama using public tuition and financial aid data.
+      </div>
+      <iframe src="https://public.flourish.studio/story/1848749/embed" height="600" scrolling="no"></iframe>
+    </div>
+
+    <!-- Story 3 -->
+    <div class="story-item" id="story3">
+      <a href="https://www.al.com/educationlab/2023/01/here-are-alabamas-10-highest-paid-school-superintendents-see-what-your-district-pays.html" target="_blank">
+        Alabama's 10 Highest Paid School Superintendents
+      </a>
+      <div class="story-desc">
+        Interactive breakdown of superintendent salaries by district across Alabama.
+      </div>
+      <iframe src="https://public.flourish.studio/visualisation/12361036/embed" height="600" scrolling="no"></iframe>
+    </div>
+
+    <!-- Story 4 -->
+    <div class="story-item" id="story4">
+      <a href="https://www.al.com/educationlab/2025/07/how-much-does-private-school-cost-in-alabama-see-tuition-for-216-schools.html" target="_blank">
+        How Much Does Private School Cost in Alabama?
+      </a>
+      <div class="story-desc">
+        Data-driven reporting on private school tuition across the state, illustrating inequities amid the growth of school choice programs.
+      </div>
+      <iframe data-type="datawrapper" src="https://datawrapper.dwcdn.net/7zDSF/13/" scrolling="no"></iframe>
+    </div>
+
+    <!-- Story 5 -->
+    <div class="story-item" id="story5">
+      <a href="https://www.al.com/educationlab/2025/06/alabama-hands-out-128-million-for-private-school-homeschool-support-whos-getting-money.html" target="_blank">
+        Alabama Hands Out $128 Million for Private School and Homeschool Support
+      </a>
+      <div class="story-desc">
+        Analysis of school choice funding and who benefits from new state grants and reimbursements.
+      </div>
+      <iframe src="https://public.flourish.studio/visualisation/23803072/embed" height="600" scrolling="no"></iframe>
+    </div>
+
+    <!-- Story 6 -->
+    <div class="story-item" id="story6">
+      <a href="https://www.al.com/topic/names%20in%20crimson%20flame/" target="_blank">
+        Names in Crimson Flame
+      </a>
+      <div class="story-desc">
+        Interactive feature on the cultural legacy of Alabama football and its influence on baby names across the country.
+      </div>
+      <iframe data-type="datawrapper" src="https://datawrapper.dwcdn.net/wCPFT/5/" scrolling="no"></iframe>
+    </div>
+
+    <!-- Story 7 -->
+    <div class="story-item" id="story7">
+      <a href="https://www.al.com/educationlab/2025/01/alabama-schools-arent-last-anymore-new-rankings-show-we-can-do-better.html" target="_blank">
+        Alabama Schools Aren’t Last Anymore – New Rankings Show We Can Do Better
+      </a>
+      <div class="story-desc">
+        Interactive analysis of the latest national school rankings and what they reveal about Alabama's progress and remaining gaps.
+      </div>
+      <iframe src="https://public.flourish.studio/visualisation/21361995/embed" height="600" scrolling="no"></iframe>
+    </div>
+
   </div>
 
-  <!-- Pagination Controls -->
-  <div class="pagination-controls">
-    <button onclick="prevSlide()">← Previous</button>
-    <button onclick="nextSlide()">Next →</button>
-  </div>
-  <div id="progress-indicator">1 / 7</div>
-
-  <p style="margin-top:30px; text-align:center;">
+  <div class="back-link">
     <a href="../index.html">← Back to Portfolio</a>
-  </p>
+  </div>
 
-  <!-- Slideshow JS -->
+  <!-- Jump menu JS -->
   <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.story-item');
-    const indicator = document.getElementById('progress-indicator');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-        if (i === index) adjustSlideHeight(slide);
-      });
-      indicator.textContent = `${index + 1} / ${slides.length}`;
+    function jumpToStory(id) {
+      if (id) {
+        document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+      }
     }
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-    function adjustSlideHeight(slide) {
-      const viewportHeight = window.innerHeight;
-      const baseHeight = viewportHeight * 0.7;
-      slide.style.minHeight = "auto";
-      const contentHeight = slide.scrollHeight;
-      slide.style.minHeight = Math.max(contentHeight, baseHeight) + "px";
-    }
-    window.addEventListener('resize', () => {
-      adjustSlideHeight(slides[currentSlide]);
-    });
-    showSlide(currentSlide);
   </script>
 
-  <!-- Datawrapper auto-resize -->
+  <!-- Datawrapper auto-resize script -->
   <script>
     window.addEventListener("message", function(event) {
       if (event.data["datawrapper-height"]) {
