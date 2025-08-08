@@ -83,6 +83,32 @@
       color: #ffcc00;
     }
 
+    /* Story title link (inside h2 or top-level in story-item) */
+.story-item > a {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: black;
+  text-decoration: none;
+}
+.story-item > a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+/* Body text links (inside paragraphs, descriptions, etc.) */
+.story-item p a,
+.story-desc a {
+  font-weight: normal;
+  font-size: 1em;   /* match paragraph size */
+  color: #ffcc00;   /* distinct link color */
+  text-decoration: underline;
+}
+.story-item p a:hover,
+.story-desc a:hover {
+  color: #ffcc00;
+}
+
+
     /* Description */
     .story-desc {
       font-size: 1em;
@@ -243,6 +269,8 @@
       </a>
       <div class="story-desc">
         Alabama has stood out nationally for its post-COVID gains in reading and math. When NAEP scores released, I quickly analyzed and visualized the data, creating a series of interactives to highlight progress and gaps on a tight daily deadline.
+    </div>
+    <iframe src="https://public.flourish.studio/visualisation/21361995/embed" height="600" scrolling="no"></iframe>
     </div>
 
   </div>
