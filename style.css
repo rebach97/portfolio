@@ -292,7 +292,7 @@ section + section {
 #awards .awards-list {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
   
 }
 
@@ -310,7 +310,7 @@ section + section {
   }
 
   #awards .awards-list {
-    padding: 0 10px;
+    padding: 0 5px;
     text-align: left;/* less cramped margins */
   }
   
@@ -322,6 +322,7 @@ section + section {
     display: block;     /* put category titles on their own line */
     margin-top: 1em;
     font-size:1.25em;
+    font-weight: 400;
   }
 }
 
