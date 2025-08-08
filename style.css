@@ -293,11 +293,13 @@ section + section {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
+  
 }
 
 #awards p {
-  font-size: 0.85em;
-  line-height: 1.6;
+  font-size: 0.75em;
+  line-height: 1.25;
+  text-align: left;
 }
 
 /* Mobile tweaks */
@@ -308,11 +310,12 @@ section + section {
   }
 
   #awards .awards-list {
-    padding: 0 10px;  /* less cramped margins */
+    padding: 0 10px;
+    text-align: left;/* less cramped margins */
   }
   
   #awards p + p {
-    margin-top: 0.5em; /* consistent spacing between lines */
+    margin-top: 0.25em; /* consistent spacing between lines */
   }
   
   #awards b {
