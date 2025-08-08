@@ -260,7 +260,7 @@ section + section {
 .data-analysis .clip-thumb,
 .nyt-covid .clip-thumb {
   width: 100%;
-  max-width: 320px
+  max-width: 320px;
   height: 180px;
   display: flex;
   justify-content: center;
