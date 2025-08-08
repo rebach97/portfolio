@@ -88,6 +88,12 @@ nav {
   transition: height 0.3s ease;
 }
 
+/* Responsive left/right padding for the navbar container */
+.nav-container {
+  padding-left: clamp(15px, 5vw, 60px);
+  padding-right: clamp(15px, 5vw, 60px);
+}
+
 nav.shrink .nav-container {
   height: 50px;
 }
