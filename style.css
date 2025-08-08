@@ -220,7 +220,7 @@ section + section {
 /* ===== Clips Grid Styling ===== */
 .clips {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
@@ -242,7 +242,7 @@ section + section {
 .clip-thumb {
   width: 100%;
   max-width: 320px;
-  height: 180px;
+  height: 200px;
   margin: 0 auto 12px;
   overflow: hidden;
   border-radius: 6px;
@@ -261,7 +261,7 @@ section + section {
 .nyt-covid .clip-thumb {
   width: 100%;
   max-width: 320px;
-  height: 180px;
+  height: 200px;
   margin: 0 auto 12px;
   display: flex;
   justify-content: center;
