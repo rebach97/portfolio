@@ -295,6 +295,12 @@ section + section {
   padding: 0 10px;
   
 }
+#awards h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  margin: 8px 0 6px 0;
+  color: black;
+}
 
 #awards p {
   font-size: 0.75em;
