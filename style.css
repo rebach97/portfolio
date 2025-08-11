@@ -306,7 +306,7 @@ section + section {
 
 #awards p {
   font-size: 0.75em;
-  line-height: 1;
+  line-height: 1.25;
   text-align: left;
 }
 
@@ -323,7 +323,7 @@ section + section {
   }
   
   #awards p + p {
-    margin-top: 0.25em; /* consistent spacing between lines */
+    margin-top: 0.15em; /* consistent spacing between lines */
   }
   
   #awards b {
