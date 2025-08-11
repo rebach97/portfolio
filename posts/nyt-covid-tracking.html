@@ -52,6 +52,15 @@
       color: #333;
       margin-top: 5px;
     }
+    .story-item p a,
+.story-desc a {
+  font-weight: normal;
+  text-decoration: underline;
+}
+.story-item p a:hover,
+.story-desc a:hover {
+  color: #ffcc00;
+}
         /* Breadcrumb */
     .breadcrumb {
       font-size: 0.9em;
@@ -65,6 +74,13 @@
     .breadcrumb a:hover {
       text-decoration: underline;
       color: #000;
+    }
+
+      @media (max-width: 700px) {
+  body, .story-list {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
     }
   </style>
 </head>

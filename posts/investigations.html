@@ -67,6 +67,16 @@
       color: #333;
       margin-top: 5px;
     }
+    .story-item p a,
+.story-desc a {
+  font-weight: normal;
+  text-decoration: underline;
+}
+.story-item p a:hover,
+.story-desc a:hover {
+  color: #ffcc00;
+}
+    
     h2.section-subtitle {
       margin-top: 35px;
       margin-bottom: 15px;
@@ -75,6 +85,12 @@
       font-size: 1.2em;
       text-align: left;
       padding-left: 8px;
+    }
+        @media (max-width: 700px) {
+  body, .story-list {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
     }
   </style>
 </head>
