@@ -297,7 +297,9 @@ section + section {
 }
 #awards h3 {
   font-family: 'Montserrat', sans-serif;
+  text-align: left;
   font-size: 1em;
+  font-weight: bold;
   margin: 8px 0 6px 0;
   color: black;
 }
